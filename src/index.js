@@ -1,77 +1,71 @@
 const counter = document.querySelector(".counter");
 const waffleBTN = document.querySelector(".waffle-img");
+
 let score = 0;
 
-const clickX2BTN = document.querySelector(".clickX2");
-const spanPriceClickX2 = document.querySelector("#priceClickX2");
-let priceX2BTN = 25;
-const spanBonusClickX2 = document.querySelector("#bonusClickX2");
-let clickValue = 1;
-
-const autoClickBTN = document.querySelector(".autoClicker");
-const spanPriceAutoClick = document.querySelector("#priceAutoClick");
-let priceAutoClick = 40;
-let nbrAutoClick = 0;
-
-const JCVDBTN = document.querySelector(".JCVD");
-const spanPriceJCVD = document.querySelector("#priceJCVD");
-let priceJCVD = 500;
-let nbrJCVD = 0;
-
-const bakeryBTN = document.querySelector(".bakery");
-const spanPriceBakery = document.querySelector("#priceBakery");
-let priceBakery = 7500;
-let nbrBakery = 0;
+// -------------------------------------------------
+//                  BIG BOSS INTERVAL
+// -------------------------------------------------
+let bigBossInterval;
+let intervalValue = 0;
 
 // -------------------------------------------------
 //                   WAFFLE BTN
 // -------------------------------------------------
+let clickValue = 1;
+
 waffleBTN.addEventListener("click", () => {
+  // Update and Display score
   score += clickValue;
   counter.innerHTML = score;
 
+  // Create a element with css class : css animation
   waffleAnimation();
 });
 
 // --------------------------------------------------
+//                 AUTO-CLICK BTNS
+// --------------------------------------------------
+for (let i = 0; i < ITEM_LIST.length; i++) {
+  ITEM_LIST[i].name.addEventListener("click", (e) => {
+    if (score >= ITEM_LIST[i].price) {
+      // Update and Display score
+      score -= ITEM_LIST[i].price;
+      counter.innerHTML = score;
+
+      // Update quantity
+      ITEM_LIST[i].quantity++;
+
+      // Upadate and Display price
+      ITEM_LIST[i].price *= 2;
+      ITEM_LIST[i].divPrice.innerHTML = ITEM_LIST[i].price;
+
+      // Delete and Update VALUE of bigBossInterval
+      clearInterval(bigBossInterval);
+      intervalValue += ITEM_LIST[i].value;
+      // Start again bigBossInterval becaus he never die!
+      bigBossInterval = setInterval(() => {
+        score += intervalValue;
+        counter.innerHTML = score;
+      }, 1000);
+
+      // HANNA : function for add images in YOUR CITY
+      purchaseItem(e);
+    }
+  });
+}
+
+// --------------------------------------------------
 //                   CLICK X2 BTN
 // --------------------------------------------------
-clickX2BTN.addEventListener("click", () => {
-  if (score >= priceX2BTN) {
-    score -= priceX2BTN;
-    counter.innerHTML = score;
+// clickX2BTN.addEventListener("click", () => {
+//   if (score >= priceX2BTN) {
+//     score -= priceX2BTN;
+//     counter.innerHTML = score;
 
-    clickValue *= 2;
+//     clickValue *= 2;
 
-    priceX2BTN *= 2;
-    spanPriceClickX2.innerHTML = priceX2BTN;
-  }
-});
-
-// --------------------------------------------------
-//                   AUTO-CLICK BTN
-// --------------------------------------------------
-autoClickBTN.addEventListener("click", () => {
-  if (score >= priceAutoClick) {
-    score -= priceAutoClick;
-    counter.innerHTML = score;
-
-    nbrAutoClick++;
-
-    priceAutoClick *= 2;
-    spanPriceAutoClick.innerHTML = priceAutoClick;
-
-    setInterval(() => {
-      score += clickValue;
-      counter.innerHTML = score;
-    }, 1000);
-  }
-});
-
-// --------------------------------------------------
-//                   JCVD BTN
-// --------------------------------------------------
-
-// --------------------------------------------------
-//                   BAKERY BTN
-// --------------------------------------------------
+//     priceX2BTN *= 2;
+//     spanPriceClickX2.innerHTML = priceX2BTN;
+//   }
+// });
