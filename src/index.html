@@ -45,8 +45,8 @@
                 <p class="amount"></p>
             </button>
 
-            <button class="store-button" id="atomium">
-                <img src="images/manneken-pis.png" alt="Atomium">
+            <button class="store-button" id="manneken-pis">
+                <img src="images/manneken-pis.png" alt="Manneken Pis">
                 <div class="store-button-description">
                     <p class="store-item-name">
                         Manneken Pis
@@ -58,14 +58,14 @@
                     </div>
 
                     <p class="role">
-                        <span id="num-atomium">0</span> Manneken Pis producing 
-                        <span id="num-atomium-waffles">0</span> waffles per second
+                        <span id="num-manneken-pis">0</span> Manneken Pis producing 
+                        <span id="num-manneken-pis-waffles">0</span> waffles per second
                     </p> 
                 </div>
                 <p class="amount"></p>
             </button>
 
-            <button class="store-button" id="jean-vd">
+            <button class="store-button" id="jean-claude">
                 <img src="images/jean-claude.gif" alt="Jean-Claude Van Damme">
                 <div class="store-button-description">
                     <p class="store-item-name">
@@ -123,8 +123,8 @@
                 <p class="amount"></p>
             </button>
 
-            <button class="store-button" id="atomium">
-                <img src="images/grand-place.png" alt="Atomium">
+            <button class="store-button" id="grand-place">
+                <img src="images/grand-place.png" alt="Grand Place">
                 <div class="store-button-description">
                     <p class="store-item-name">
                         Grand Place
@@ -136,8 +136,8 @@
                     </div>
 
                     <p class="role">
-                        <span id="num-atomium">0</span> Grand Places producing 
-                        <span id="num-atomium-waffles">0</span> waffles per second
+                        <span id="num-grand-place">0</span> Grand Places producing 
+                        <span id="num-grand-place-waffles">0</span> waffles per second
                     </p> 
                 </div>
                 <p class="amount"></p>
@@ -147,9 +147,9 @@
       <section class="waffle-section">
         <div class="counter">0</div>
         <div class="textWaffle">waffles in stock</div>
-        <button class="waffle-button">
-                <img src="./images/waffle.png" alt="waffle" class="waffle-img">
-            </button>
+
+        <div class="purchased-cursors"></div>
+        <img src="./images/waffle.png" alt="waffle" class="waffle-img">
 
         <button class="clickX2 bonusBtn">
           Click x<span id="bonusClickX2">2</span>! [<span id="priceClickX2"
@@ -161,8 +161,16 @@
           Auto-Clicker! [<span id="priceAutoClick">40</span>$]
         </button>
       </section>
-      <section class="purchased"></section>
+      <section class="purchased">
+          <h2>Your City</h2>
+          <div class="manneken-pis"></div>
+          <div class="jean-claude"></div>
+          <div class="bakery"></div>
+          <div class="atomium"></div>
+          <div class="grand-place"></div>
+      </section>
     </main>
     <script src="index.js"></script>
+    <script src="store-buttons.js"></script>
   </body>
 </html>
