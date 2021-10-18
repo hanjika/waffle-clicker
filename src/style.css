@@ -126,7 +126,6 @@ button {
 
 .waffle-button img {
     width: 190px;
-    background-color: rgb(31, 87, 87);
     animation-name: waffle;
     animation-duration: 4s;
     animation-timing-function: ease;
@@ -139,19 +138,16 @@ button {
 
 @keyframes waffle {
     0% {
-        transform: scale(.3);
-        background-color: darkslategray;
+        transform: scale(0.2);
         border-radius: 100%;
     }
     100% {
         transform: scale(1.2);
-        background-color: darkslategray;
         border-radius: 100%;
     }
 }
 
 .waffle-section {
-    background-color: darkslategray;
     width: 250px;
     height: 300px;
     display: grid;
@@ -163,7 +159,6 @@ button {
     height: 30px;
     margin-left: 30%;
     margin-top: 15px;
-    border: solid wheat;
     border-radius: 100%;
     grid-row: 1;
     text-align: center;
@@ -171,12 +166,10 @@ button {
 }
 
 .waffle-button {
-    border: darkslategray;
     border-radius: 90%;
     margin-left: 10%;
     margin-top: 10%;
     margin-right: 10%;
     width: 200px;
-    background-color: darkslategray;
     grid-row: 2;
 }
