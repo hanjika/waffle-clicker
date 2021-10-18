@@ -1,37 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Belgian Waffle Clicker</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Title</h1>
+      <h1>Title</h1>
     </header>
 
     <main>
-        <section class="store">
-            <div class="buy-sell"></div>
-            <div class="cursor"></div>
-            <div class="jean"></div>
-            <div class="bakery"></div>
-        </section>
+      <section class="store">
+        <div class="buy-sell"></div>
+        <div class="cursor"></div>
+        <div class="jean"></div>
+        <div class="bakery"></div>
+      </section>
 
-        <section class="waffle-section">
-            <div class="counter"></div>
-            <button class="waffle-button">
-                <img src="" alt="waffle" class="waffle-img">
-            </button>
+      <section class="waffle-section">
+        <div class="counter">0</div>
+        <div class="textWaffle">waffles in stock</div>
+        <button class="waffle-button">Waffle +1</button>
 
-        </section>
+        <button class="clickX2 bonusBtn">
+          Click x<span id="bonusClickX2">2</span>! [<span id="priceClickX2"
+            >25</span
+          >$]
+        </button>
 
-        <section class="purchased">
-
-        </section>
+        <button class="autoClicker bonusBtn">
+          Auto-Clicker! [<span id="priceAutoClick">40</span>$]
+        </button>
+      </section>
+      <section class="purchased"></section>
     </main>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
