@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap" rel="stylesheet">
     <title>Belgian Waffle Clicker</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
         <h1>Belgian Waffle Clicker</h1>
     </header>
@@ -144,18 +144,23 @@
             </button>
         </section>
 
-        <section class="waffle-section">
-            <div class="counter"></div>
-            <button class="waffle-button">
-                <img src="" alt="waffle" class="waffle-img">
-            </button>
+      <section class="waffle-section">
+        <div class="counter">0</div>
+        <div class="textWaffle">waffles in stock</div>
+        <button class="waffle-button">Waffle +1</button>
 
-        </section>
+        <button class="clickX2 bonusBtn">
+          Click x<span id="bonusClickX2">2</span>! [<span id="priceClickX2"
+            >25</span
+          >$]
+        </button>
 
-        <section class="purchased">
-
-        </section>
+        <button class="autoClicker bonusBtn">
+          Auto-Clicker! [<span id="priceAutoClick">40</span>$]
+        </button>
+      </section>
+      <section class="purchased"></section>
     </main>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
