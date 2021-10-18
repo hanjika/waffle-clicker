@@ -1,0 +1,41 @@
+.waffle-button img {
+    width: 200px;
+    background-color: rgb(31, 87, 87);
+    animation-name: waffle;
+    animation-duration: 3.5s;
+    animation-timing-function: ease;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-fill-mode: none;
+    animation-play-state: running;
+}
+
+@keyframes waffle {
+    0% {
+        transform: scale(.3);
+        background-color: darkslategray;
+        border-radius: 100%;
+    }
+    50% {
+        background-color: #5F0F40;
+    }
+    100% {
+        transform: scale(1);
+        background-color: #FB8B24;
+    }
+}
+
+.waffle-button {
+    border-radius: 90%;
+    margin-left: 10%;
+    margin-top: 20%;
+    margin-right: 10%;
+    width: 200px;
+}
+
+.waffle-section {
+    background-color: darkslategray;
+    width: 250px;
+    height: 300px;
+}
