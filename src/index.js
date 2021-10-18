@@ -1,6 +1,9 @@
 const counter = document.querySelector(".counter");
 const waffleBTN = document.querySelector(".waffle-img");
 
+const buyBtn = document.querySelector(".buy-button");
+const sellBtn = document.querySelector(".sell-button");
+
 let score = 0;
 
 // -------------------------------------------------
@@ -23,37 +26,24 @@ waffleBTN.addEventListener("click", () => {
   waffleAnimation();
 });
 
-// --------------------------------------------------
-//                 AUTO-CLICK BTNS
-// --------------------------------------------------
-for (let i = 0; i < ITEM_LIST.length; i++) {
-  ITEM_LIST[i].name.addEventListener("click", (e) => {
-    if (score >= ITEM_LIST[i].price) {
-      // Update and Display score
-      score -= ITEM_LIST[i].price;
-      counter.innerHTML = score;
+// -----------------------------------------------------------
+//               BUY & SELL :  AUTO-CLICK BTNS
+// -----------------------------------------------------------
+// BUY BTN
+buyBtn.addEventListener("click", () => {
+  for (let i = 0; i < ITEM_LIST.length; i++) {
+    ITEM_LIST[i].name.removeEventListener("click", autoClickerSELL(i));
+    ITEM_LIST[i].name.addEventListener("click", autoClickerBUY(i));
+  }
+});
 
-      // Update quantity
-      ITEM_LIST[i].quantity++;
-
-      // Upadate and Display price
-      ITEM_LIST[i].price *= 2;
-      ITEM_LIST[i].divPrice.innerHTML = ITEM_LIST[i].price;
-
-      // Delete and Update VALUE of bigBossInterval
-      clearInterval(bigBossInterval);
-      intervalValue += ITEM_LIST[i].value;
-      // Start again bigBossInterval becaus he never die!
-      bigBossInterval = setInterval(() => {
-        score += intervalValue;
-        counter.innerHTML = score;
-      }, 1000);
-
-      // HANNA : function for add images in YOUR CITY
-      purchaseItem(e);
-    }
-  });
-}
+// SELL BTN
+sellBtn.addEventListener("click", () => {
+  for (let i = 0; i < ITEM_LIST.length; i++) {
+    ITEM_LIST[i].name.removeEventListener("click", autoClickerBUY(i));
+    ITEM_LIST[i].name.addEventListener("click", autoClickerSELL(i));
+  }
+});
 
 // --------------------------------------------------
 //                   CLICK X2 BTN

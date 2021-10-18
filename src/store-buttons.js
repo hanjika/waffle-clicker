@@ -1,8 +1,8 @@
-// const storeButtons = document.querySelectorAll('.store-button');
+const storeButtons = document.querySelectorAll(".store-button");
 
-// for (const storeBtn of storeButtons) {
-//     storeBtn.addEventListener('click', purchaseItem);
-// }
+for (const storeBtn of storeButtons) {
+  storeBtn.addEventListener("click", purchaseItem);
+}
 
 function purchaseItem(e) {
   var item = e.target.id;
