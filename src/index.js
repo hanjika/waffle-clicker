@@ -1,5 +1,5 @@
 const counter = document.querySelector(".counter");
-const waffleBTN = document.querySelector(".waffle-button");
+const waffleBTN = document.querySelector(".waffle-img");
 let score = 0;
 
 const clickX2BTN = document.querySelector(".clickX2");
