@@ -1,0 +1,127 @@
+:root {
+    --chocolate: #430d01;
+    --background-color: #ffedc3;
+    --bright-pink: #ff3ea5;
+    --cherry-blossom: #F9B8C7;
+    --aquamarine: #90FCDF;
+    --light-sky-blue: #8edbf5;
+    --darker-sky-blue: #66CEF1;
+}
+
+body {
+    background-image: url('images/choc-background.jpg');
+    background-size: cover;
+    //background-color: #073B4C;
+    color: white;
+    font-family: 'Skranji', cursive;
+}
+
+header {
+    text-align: center;
+    color: #ffedc3;
+}
+
+main {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    font-family: 'Skranji', cursive;
+    cursor: pointer;
+}
+
+.buy-sell {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buy-button {
+    background-color: #06D6A0;
+}
+
+.sell-button {
+    background-color: #EF476F;
+}
+
+.buy-sell button {
+    width: 10vw;
+    height: 6vh;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    //box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.buy-sell button:hover, .buy-sell button:active {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.store {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 70vh;
+}
+
+.store-button {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    background-color: var(--cherry-blossom);
+    width: 30vw;
+    height: 10vh;
+    border: double;
+    border-radius: 10px;
+    align-items: center;
+    //box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.store-button img {
+    max-width: 5vw;
+    max-height: 8vh;
+    justify-self: center;
+}
+
+.waffle-price {
+    display: flex;
+    flex-direction: row;
+}
+
+.store-button-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 25vw;
+}
+
+.store-button-description p {
+    margin: 0;
+}
+
+.store-item-name {
+    font-weight: bold;
+}
+
+.role {
+    display: none;
+}
+
+.store-button:hover, .store-button:active {
+    box-shadow: var(--bright-pink) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.store-button:hover .role {
+    display: block;
+}
+
+.waffle-price img {
+    width: 24%;
+}
+
+.amount {
+    font-size: 200%;
+    margin: 0;
+    padding-right: 0;
+}
+
+

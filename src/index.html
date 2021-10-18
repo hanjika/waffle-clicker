@@ -5,19 +5,143 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Skranji:wght@400;700&display=swap" rel="stylesheet">
     <title>Belgian Waffle Clicker</title>
 </head>
 <body>
     <header>
-        <h1>Title</h1>
+        <h1>Belgian Waffle Clicker</h1>
     </header>
 
     <main>
         <section class="store">
-            <div class="buy-sell"></div>
-            <div class="cursor"></div>
-            <div class="jean"></div>
-            <div class="bakery"></div>
+            <div class="buy-sell">
+                <button class="buy-button">
+                    Buy
+                </button>
+                <button class="sell-button">
+                    Sell
+                </button>
+            </div>
+            <button class="store-button" id="cursor">
+                <img src="images/cursor.png" alt="cursor">
+                <div class="store-button-description">
+                    <p class="store-item-name">
+                        Cursor
+                    </p>
+
+                    <div class="waffle-price">
+                        <img src="images/waffle.png" alt="waffle">
+                        <p class="price cursor">10</p>
+                    </div>
+
+                    <p class="role">
+                        <span id="num-cursor">0</span> cursors producing 
+                        <span id="num-cursor-waffles">0</span> waffles per second
+                    </p> 
+                </div>      
+                <p class="amount"></p>
+            </button>
+
+            <button class="store-button" id="atomium">
+                <img src="images/manneken-pis.png" alt="Atomium">
+                <div class="store-button-description">
+                    <p class="store-item-name">
+                        Manneken Pis
+                    </p>
+
+                    <div class="waffle-price">
+                        <img src="images/waffle.png" alt="waffle">
+                        <p class="price manneken-pis">100</p>
+                    </div>
+
+                    <p class="role">
+                        <span id="num-atomium">0</span> Manneken Pis producing 
+                        <span id="num-atomium-waffles">0</span> waffles per second
+                    </p> 
+                </div>
+                <p class="amount"></p>
+            </button>
+
+            <button class="store-button" id="jean-vd">
+                <img src="images/jean-claude.gif" alt="Jean-Claude Van Damme">
+                <div class="store-button-description">
+                    <p class="store-item-name">
+                        Jean-Claude Van Damme
+                    </p>
+
+                    <div class="waffle-price">
+                        <img src="images/waffle.png" alt="waffle">
+                        <p class="price jean">250</p>
+                    </div>
+                    
+                    <p class="role">
+                        <span id="num-jean-claude">0</span> Van Dammes producing 
+                        <span id="num-jean-waffles">0</span> waffles per second
+                    </p>  
+                </div>
+                <p class="amount"></p>
+            </button>
+
+            <button class="store-button" id="bakery">
+                <img src="images/bakery.png" alt="bakery">
+                <div class="store-button-description"
+                    <p class="store-item-name">
+                        Bakery
+                    </p>
+
+                    <div class="waffle-price">
+                        <img src="images/waffle.png" alt="waffle">
+                        <p class="price bakery">750</p>
+                    </div>
+
+                    <p class="role">
+                        <span id="num-bakery">0</span> bakeries producing 
+                        <span id="num-bakery-waffles">0</span> waffles per second
+                    </p>
+                </div>   
+            </button>
+
+            <button class="store-button" id="atomium">
+                <img src="images/atomium.png" alt="Atomium">
+                <div class="store-button-description">
+                    <p class="store-item-name">
+                        Atomium
+                    </p>
+                    <div class="waffle-price">
+                        <img src="images/waffle.png" alt="waffle">
+                        <p class="price atomium">1500</p>
+                    </div>
+
+                    <p class="role">
+                        <span id="num-atomium">0</span> Atomiums producing 
+                        <span id="num-atomium-waffles">0</span> waffles per second
+                    </p>
+                </div>
+                <p class="amount"></p>
+            </button>
+
+            <button class="store-button" id="atomium">
+                <img src="images/grand-place.png" alt="Atomium">
+                <div class="store-button-description">
+                    <p class="store-item-name">
+                        Grand Place
+                    </p>
+                    
+                    <div class="waffle-price">
+                        <img src="images/waffle.png" alt="waffle">
+                        <p class="price grand-place">4000</p>
+                    </div>
+
+                    <p class="role">
+                        <span id="num-atomium">0</span> Grand Places producing 
+                        <span id="num-atomium-waffles">0</span> waffles per second
+                    </p> 
+                </div>
+                <p class="amount"></p>
+            </button>
         </section>
 
         <section class="waffle-section">
