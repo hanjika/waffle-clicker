@@ -1,7 +1,7 @@
-import { SHOPITEMS } from './shop-items';
-import cursor from './images/cursor.png';
-import manneken from './images/manneken-pis.png';
-import jean from './images/jean-claude.gif';
+import { SHOPITEMS } from "./shop-items";
+import cursor from "./images/cursor.png";
+import manneken from "./images/manneken-pis.png";
+import jean from "./images/jean-claude.gif";
 
 var counter = document.querySelector(".counter");
 var counterInterval = setInterval(increaseCounterfromPurchases, 1000);
@@ -15,17 +15,17 @@ const buyBtn = document.querySelector(".buy-button");
 const sellBtn = document.querySelector(".sell-button");
 
 export function clickBuy(e) {
-    buyBtn.classList.toggle('active');
-    if (sellBtn.classList.contains('active')) {
-        sellBtn.classList.remove('active');
-    }
+  buyBtn.classList.toggle("active");
+  if (sellBtn.classList.contains("active")) {
+    sellBtn.classList.remove("active");
+  }
 }
 
 export function clickSell(e) {
-    sellBtn.classList.toggle('active');
-    if (buyBtn.classList.contains('active')) {
-        buyBtn.classList.remove('active');
-    }
+  sellBtn.classList.toggle("active");
+  if (buyBtn.classList.contains("active")) {
+    buyBtn.classList.remove("active");
+  }
 }
 
 // -------------------------------------------------
@@ -53,24 +53,23 @@ function subtractPriceFromCounter(item) {
 // -------------------------------------------------
 
 function addItemtoCity(item) {
-    if (item === 'cursor') {
-        const newImg = document.createElement('img');
-        newImg.src = cursor;
-        document.querySelector('.purchased-cursors').appendChild(newImg);
-    } else {
-        const city = document.querySelector('.purchased');
-        const cityDiv = city.querySelector('.' + item);
+  if (item === "cursor") {
+    const newImg = document.createElement("img");
+    newImg.src = cursor;
+    document.querySelector(".purchased-cursors").appendChild(newImg);
+  } else {
+    const city = document.querySelector(".purchased");
+    const cityDiv = city.querySelector("." + item);
 
-        const newImg = document.createElement('img');
-        if (item === 'jean-claude') {
-            newImg.src = jean;
-        } else {
-            newImg.src = item;
-        }
-        cityDiv.appendChild(newImg);
+    const newImg = document.createElement("img");
+    if (item === "jean-claude") {
+      newImg.src = jean;
+    } else {
+      newImg.src = item;
     }
     cityDiv.appendChild(newImg);
   }
+  cityDiv.appendChild(newImg);
 }
 
 // -------------------------------------------------
@@ -112,8 +111,8 @@ function increaseCounterfromPurchases() {
 }
 
 export function canAffordStoreItems() {
-    const allPrices = document.querySelectorAll('.price');
-    const affordableItems = [];
+  const allPrices = document.querySelectorAll(".price");
+  const affordableItems = [];
 
   for (const price of allPrices) {
     const priceVal = parseInt(price.innerText);

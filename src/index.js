@@ -5,6 +5,7 @@ import {
   autoClickerSELL,
   udpateScore,
 } from "./functions";
+import { clickBuy, clickSell, canAffordStoreItems } from "./store-buttons";
 
 // -------------------------------------------------
 //      ADD EVENT LISTENERS TO BUY/SELL BUTTONS
@@ -25,11 +26,9 @@ waffleBTN.addEventListener("click", () => {
   // Update and Display score
   udpateScore();
 
-  // Updates items that are affordable
-  // canAffordStoreItems();
-
   // Create a element with css class : css animation
-  //waffleAnimation();
+  waffleAnimation();
+
   // Updates items that are affordable
   canAffordStoreItems();
 });
@@ -41,23 +40,23 @@ for (let i = 0; i < ITEM_LIST.length; i++) {
   ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
 }
 
-// BUY BTN
-buyBtn.addEventListener("click", () => {
-  console.log("mode BUY activé");
-  for (let i = 0; i < ITEM_LIST.length; i++) {
-    ITEM_LIST[i].name.removeEventListener("click", () => autoClickerSELL(i));
-    ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
-  }
-});
+// // BUY BTN
+// buyBtn.addEventListener("click", () => {
+//   console.log("mode BUY activé");
+//   for (let i = 0; i < ITEM_LIST.length; i++) {
+//     ITEM_LIST[i].name.removeEventListener("click", () => autoClickerSELL(i));
+//     ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
+//   }
+// });
 
-// SELL BTN
-sellBtn.addEventListener("click", () => {
-  console.log("mode SELL activé");
-  for (let i = 0; i < ITEM_LIST.length; i++) {
-    ITEM_LIST[i].name.removeEventListener("click", () => autoClickerBUY(i));
-    ITEM_LIST[i].name.addEventListener("click", () => autoClickerSELL(i));
-  }
-});
+// // SELL BTN
+// sellBtn.addEventListener("click", () => {
+//   console.log("mode SELL activé");
+//   for (let i = 0; i < ITEM_LIST.length; i++) {
+//     ITEM_LIST[i].name.removeEventListener("click", () => autoClickerBUY(i));
+//     ITEM_LIST[i].name.addEventListener("click", () => autoClickerSELL(i));
+//   }
+// });
 
 // --------------------------------------------------
 //                   CLICK X2 BTN
