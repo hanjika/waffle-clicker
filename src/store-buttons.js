@@ -33,13 +33,10 @@ export function clickSell(e) {
 // -------------------------------------------------
 
 function purchaseItem(e) {
-  if (buyBtn.classList.contains("active")) {
-    var item = e.target.id;
-    console.log(item);
-    addItemtoCity(item);
-    subtractPriceFromCounter(e.target);
-    editItemDescription(e.target);
-  }
+  var item = e.target.id;
+  addItemtoCity(item);
+  subtractPriceFromCounter(e.target);
+  editItemDescription(e.target);
 }
 
 function subtractPriceFromCounter(item) {
@@ -47,6 +44,19 @@ function subtractPriceFromCounter(item) {
   const counterMoney = parseInt(counter.innerText);
   counter.innerText = counterMoney - price;
 }
+
+// -------------------------------------------------
+//                 SELLING ITEM
+// -------------------------------------------------
+
+function sellItem(e) {
+  var item = e.target.id;
+  //removeItemFromCity
+  //addPriceToCounter
+  //editItemDescriptionSold
+}
+
+//function addPriceToCounter
 
 // -------------------------------------------------
 //          DISPLAYING ITEM IN CITY PICTURE
@@ -69,81 +79,92 @@ function addItemtoCity(item) {
     }
     cityDiv.appendChild(newImg);
   }
-  cityDiv.appendChild(newImg);
-}
 
-// -------------------------------------------------
-//   Change values in description of purchased item
-// -------------------------------------------------
+  // -------------------------------------------------
+  //   Change values in description of purchased item
+  // -------------------------------------------------
 
-function editItemDescription(item) {
-  var number = parseInt(item.querySelector(".num").innerText);
-  var price = parseInt(item.querySelector(".price").innerText);
+  function editItemDescription(item) {
+    var number = parseInt(item.querySelector(".num").innerText);
+    var price = parseInt(item.querySelector(".price").innerText);
 
-  const newNum = number + 1;
-  item.querySelector(".num").innerText = newNum;
-  item.querySelector(".amount").innerText = newNum;
-  item.querySelector(".price").innerText = newNum;
+    const newNum = number + 1;
+    item.querySelector(".num").innerText = newNum;
+    item.querySelector(".amount").innerText = newNum;
+    item.querySelector(".price").innerText = newNum;
 
-  for (const shopItem of SHOPITEMS) {
-    if (shopItem.item === item.id) {
-      item.querySelector(".price").innerText = price * shopItem.priceIncrease;
-      var newNumWaffles = newNum * shopItem.production;
-      if (item.id === "cursor") {
-        newNumWaffles = newNumWaffles.toFixed(1);
-      }
-      item.querySelector(".num-waffles").innerText = newNumWaffles;
-    }
-  }
-}
-
-function increaseCounterfromPurchases() {
-  const wafflesPerSec = document.querySelectorAll(".num-waffles");
-  const wafflesArr = Array.from(wafflesPerSec);
-
-  for (const wafflesPerItem of wafflesPerSec) {
-    const intWaffles = parseInt(wafflesPerItem.innerText);
-    let toAdd = parseInt(counter.innerText);
-    toAdd += intWaffles;
-    counter.innerText = toAdd;
-  }
-  canAffordStoreItems();
-}
-
-export function canAffordStoreItems() {
-  const allPrices = document.querySelectorAll(".price");
-  const affordableItems = [];
-
-  for (const price of allPrices) {
-    const priceVal = parseInt(price.innerText);
-    const counterNum = parseInt(counter.innerText);
-
-    if (priceVal <= counterNum) {
-      const item = price.id;
-      affordableItems.push(item);
-    }
-  }
-  itemAvailableToBuy(affordableItems);
-}
-
-function itemAvailableToBuy(affordableItems) {
-  const storeButtons = document.querySelectorAll(".store-button");
-  refreshAvailability(storeButtons);
-  for (const storeBtn of storeButtons) {
-    for (const affordItem of affordableItems) {
-      if (storeBtn.id === affordItem) {
-        storeBtn.classList.add("available");
-        storeBtn.addEventListener("click", purchaseItem);
+    for (const shopItem of SHOPITEMS) {
+      if (shopItem.item === item.id) {
+        item.querySelector(".price").innerText = price * shopItem.priceIncrease;
+        var newNumWaffles = newNum * shopItem.production;
+        if (item.id === "cursor") {
+          newNumWaffles = newNumWaffles.toFixed(1);
+        }
+        item.querySelector(".num-waffles").innerText = newNumWaffles;
       }
     }
   }
-}
 
-function refreshAvailability(storeButtons) {
-  for (const storeBtn of storeButtons) {
-    if (storeBtn.classList.contains("available")) {
-      storeBtn.classList.remove("available");
-      storeBtn.removeEventListener("click", purchaseItem);
+  function increaseCounterfromPurchases() {
+    const wafflesPerSec = document.querySelectorAll(".num-waffles");
+    const wafflesArr = Array.from(wafflesPerSec);
+
+    for (const wafflesPerItem of wafflesPerSec) {
+      const intWaffles = parseInt(wafflesPerItem.innerText);
+      let toAdd = parseInt(counter.innerText);
+      toAdd += intWaffles;
+      counter.innerText = toAdd;
+    }
+    canAffordStoreItems();
+  }
+
+  export function canAffordStoreItems() {
+    console.log("here");
+    const allPrices = document.querySelectorAll(".price");
+    const affordableItems = [];
+
+    for (const price of allPrices) {
+      const priceVal = parseInt(price.innerText);
+      const counterNum = parseInt(counter.innerText);
+
+      if (priceVal <= counterNum) {
+        const item = price.id;
+        affordableItems.push(item);
+      }
+    }
+    itemAvailableToBuy(affordableItems);
+  }
+
+  export function canSell() {
+    const storeSellButtons = document.querySelectorAll(".sell-store-button");
+    for (const sellStoreBtn of storeSellButtons) {
+      const amount = sellStoreBtn.document.querySelector(".amount");
+      if (amount !== "") {
+        sellStoreBtn.classList.add("available");
+        sellStoreBtn.addEventListener("click", sellItem);
+      }
+    }
+  }
+
+  function itemAvailableToBuy(affordableItems) {
+    const storeButtons = document.querySelectorAll(".store-button");
+    refreshAvailability(storeButtons);
+    for (const storeBtn of storeButtons) {
+      for (const affordItem of affordableItems) {
+        if (storeBtn.id === affordItem) {
+          storeBtn.classList.add("available");
+          storeBtn.addEventListener("click", purchaseItem);
+        }
+      }
+    }
+  }
+
+  function refreshAvailability(storeButtons) {
+    for (const storeBtn of storeButtons) {
+      if (storeBtn.classList.contains("available")) {
+        storeBtn.classList.remove("available");
+        storeBtn.removeEventListener("click", purchaseItem);
+      }
     }
   }
 }
