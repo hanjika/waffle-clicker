@@ -33,13 +33,10 @@ export function clickSell(e) {
 // -------------------------------------------------
 
 function purchaseItem(e) {
-    if (buyBtn.classList.contains("active")) {
-        var item = e.target.id;
-        console.log(item);
-        addItemtoCity(item);
-        subtractPriceFromCounter(e.target);
-        editItemDescription(e.target);
-    }
+    var item = e.target.id;
+    addItemtoCity(item);
+    subtractPriceFromCounter(e.target);
+    editItemDescription(e.target);
 }
 
 function subtractPriceFromCounter(item) {
@@ -47,6 +44,19 @@ function subtractPriceFromCounter(item) {
     const counterMoney = parseInt(counter.innerText);
     counter.innerText = counterMoney - price;
 }
+
+// -------------------------------------------------
+//                 SELLING ITEM
+// -------------------------------------------------
+
+function sellItem(e) {
+    var item = e.target.id;
+    //removeItemFromCity
+    //addPriceToCounter
+    //editItemDescriptionSold
+}
+
+//function addPriceToCounter
 
 // -------------------------------------------------
 //          DISPLAYING ITEM IN CITY PICTURE
@@ -125,6 +135,17 @@ export function canAffordStoreItems() {
         }
     }
     itemAvailableToBuy(affordableItems);
+}
+
+export function canSell() {
+    const storeSellButtons = document.querySelectorAll('.sell-store-button');
+    for (const sellStoreBtn of storeSellButtons) {
+        const amount = sellStoreBtn.document.querySelector('.amount');
+        if (amount !== '') {
+            sellStoreBtn.classList.add('available');
+            sellStoreBtn.addEventListener('click', sellItem);
+        }
+    }
 }
 
 function itemAvailableToBuy(affordableItems) {
