@@ -1,9 +1,9 @@
 import { ITEM_LIST } from "./collection";
 import {
-  waffleAnimation,
-  autoClickerBUY,
-  autoClickerSELL,
-  udpateScore,
+    waffleAnimation,
+    autoClickerBUY,
+    autoClickerSELL,
+    udpateScore,
 } from "./functions";
 import { canAffordStoreItems, canSell } from "./store-buttons";
 
@@ -23,15 +23,16 @@ const sellBtn = document.querySelector(".sell-button");
 const waffleBTN = document.querySelector(".waffle-img");
 
 waffleBTN.addEventListener("click", () => {
-  // Update and Display score
-  udpateScore();
+    // Update and Display score
+    udpateScore();
 
-  // Updates items that are affordable
-  // canAffordStoreItems();
+    // Updates items that are affordable
+    // canAffordStoreItems();
 
   // Create a element with css class : css animation
   waffleAnimation();
-  // Updates items that are affordable
+  
+  // Updates items that are affordable or owned
   if (buyBtn.classList.contains('active')) {
     canAffordStoreItems();
   } else {
@@ -43,7 +44,7 @@ waffleBTN.addEventListener("click", () => {
 //               BUY & SELL :  AUTO-CLICK BTNS
 // -----------------------------------------------------------
 for (let i = 0; i < ITEM_LIST.length; i++) {
-  ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
+    ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
 }
 
 // BUY BTN
