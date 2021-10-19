@@ -1,9 +1,9 @@
 import { ITEM_LIST } from "./collection";
 import {
-  waffleAnimation,
-  autoClickerBUY,
-  autoClickerSELL,
-  udpateScore,
+    waffleAnimation,
+    autoClickerBUY,
+    autoClickerSELL,
+    udpateScore,
 } from "./functions";
 
 // -------------------------------------------------
@@ -22,41 +22,42 @@ sellBtn.addEventListener("click", clickSell);
 const waffleBTN = document.querySelector(".waffle-img");
 
 waffleBTN.addEventListener("click", () => {
-  // Update and Display score
-  udpateScore();
+    // Update and Display score
+    udpateScore();
 
-  // Updates items that are affordable
-  // canAffordStoreItems();
+    // Updates items that are affordable
+    // canAffordStoreItems();
 
-  // Create a element with css class : css animation
-  //waffleAnimation();
-  // Updates items that are affordable
-  canAffordStoreItems();
+    // Create a element with css class : css animation
+    waffleAnimation();
+    // Updates items that are affordable
+    canAffordStoreItems();
+
 });
 
 // -----------------------------------------------------------
 //               BUY & SELL :  AUTO-CLICK BTNS
 // -----------------------------------------------------------
 for (let i = 0; i < ITEM_LIST.length; i++) {
-  ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
+    ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
 }
 
 // BUY BTN
 buyBtn.addEventListener("click", () => {
-  console.log("mode BUY activé");
-  for (let i = 0; i < ITEM_LIST.length; i++) {
-    ITEM_LIST[i].name.removeEventListener("click", () => autoClickerSELL(i));
-    ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
-  }
+    console.log("mode BUY activé");
+    for (let i = 0; i < ITEM_LIST.length; i++) {
+        ITEM_LIST[i].name.removeEventListener("click", () => autoClickerSELL(i));
+        ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
+    }
 });
 
 // SELL BTN
 sellBtn.addEventListener("click", () => {
-  console.log("mode SELL activé");
-  for (let i = 0; i < ITEM_LIST.length; i++) {
-    ITEM_LIST[i].name.removeEventListener("click", () => autoClickerBUY(i));
-    ITEM_LIST[i].name.addEventListener("click", () => autoClickerSELL(i));
-  }
+    console.log("mode SELL activé");
+    for (let i = 0; i < ITEM_LIST.length; i++) {
+        ITEM_LIST[i].name.removeEventListener("click", () => autoClickerBUY(i));
+        ITEM_LIST[i].name.addEventListener("click", () => autoClickerSELL(i));
+    }
 });
 
 // --------------------------------------------------
