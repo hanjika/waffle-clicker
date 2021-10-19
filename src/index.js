@@ -1,4 +1,4 @@
-const counter = document.querySelector(".counter");
+var counter = document.querySelector(".counter");
 const waffleBTN = document.querySelector(".waffle-img");
 
 const buyBtn = document.querySelector(".buy-button");
@@ -21,7 +21,8 @@ waffleBTN.addEventListener("click", () => {
   // Update and Display score
   score += clickValue;
   counter.innerHTML = score;
-
+  // Updates items that are affordable
+  canAffordStoreItems();
   // Create a element with css class : css animation
   waffleAnimation();
 });
