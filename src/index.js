@@ -44,19 +44,25 @@ waffleBTN.addEventListener("click", () => {
 // -----------------------------------------------------------
 //               BUY & SELL :  AUTO-CLICK BTNS
 // -----------------------------------------------------------
+for (let i = 0; i < ITEM_LIST.length; i++) {
+  ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
+}
+
 // BUY BTN
 buyBtn.addEventListener("click", () => {
+  console.log("mode BUY activé");
   for (let i = 0; i < ITEM_LIST.length; i++) {
-    ITEM_LIST[i].name.removeEventListener("click", autoClickerSELL(i));
-    ITEM_LIST[i].name.addEventListener("click", autoClickerBUY(i));
+    ITEM_LIST[i].name.removeEventListener("click", () => autoClickerSELL(i));
+    ITEM_LIST[i].name.addEventListener("click", () => autoClickerBUY(i));
   }
 });
 
 // SELL BTN
 sellBtn.addEventListener("click", () => {
+  console.log("mode SELL activé");
   for (let i = 0; i < ITEM_LIST.length; i++) {
-    ITEM_LIST[i].name.removeEventListener("click", autoClickerBUY(i));
-    ITEM_LIST[i].name.addEventListener("click", autoClickerSELL(i));
+    ITEM_LIST[i].name.removeEventListener("click", () => autoClickerBUY(i));
+    ITEM_LIST[i].name.addEventListener("click", () => autoClickerSELL(i));
   }
 });
 
