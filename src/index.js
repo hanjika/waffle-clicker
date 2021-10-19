@@ -30,7 +30,7 @@ waffleBTN.addEventListener("click", () => {
   // canAffordStoreItems();
 
   // Create a element with css class : css animation
-  //waffleAnimation();
+  waffleAnimation();
   // Updates items that are affordable
   if (buyBtn.classList.contains('active')) {
     canAffordStoreItems();

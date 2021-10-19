@@ -168,7 +168,7 @@ button {
     width: 300px;
 }
 
-.animation {
+.animation img {
     width: 100px;
     animation-name: waffle;
     animation-duration: 10s;

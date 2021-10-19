@@ -25,11 +25,11 @@ export function waffleAnimation() {
   littleWaffle.classList.add("animation");
 
   const waffleImg = document.createElement("img");
-  waffleImg.src = "/images/waffle.png";
+  waffleImg.src = waffleImgSrc;
 
   setTimeout(() => {
     littleWaffle.remove();
-  }, 2000);
+  }, 20000);
 
   littleWaffle.appendChild(waffleImg);
   document.querySelector(".waffle-section").appendChild(littleWaffle);

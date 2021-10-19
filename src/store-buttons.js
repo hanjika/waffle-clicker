@@ -121,7 +121,6 @@ function increaseCounterfromPurchases() {
 }
 
 export function canAffordStoreItems() {
-    console.log('here')
     const allPrices = document.querySelectorAll('.price');
     const affordableItems = [];
 
