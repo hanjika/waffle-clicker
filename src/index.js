@@ -1,3 +1,9 @@
+import { ITEM_LIST } from './collection';
+import { waffleAnimation,
+  autoClickerBUY,
+  autoClickerSELL 
+} from './functions';
+
 var counter = document.querySelector(".counter");
 const waffleBTN = document.querySelector(".waffle-img");
 
@@ -22,7 +28,7 @@ waffleBTN.addEventListener("click", () => {
   score += clickValue;
   counter.innerHTML = score;
   // Updates items that are affordable
-  canAffordStoreItems();
+  // canAffordStoreItems();
   // Create a element with css class : css animation
   waffleAnimation();
 });
