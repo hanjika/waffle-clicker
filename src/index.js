@@ -6,8 +6,15 @@ import {
   udpateScore,
 } from "./functions";
 
+// -------------------------------------------------
+//      ADD EVENT LISTENERS TO BUY/SELL BUTTONS
+// -------------------------------------------------
+
 const buyBtn = document.querySelector(".buy-button");
 const sellBtn = document.querySelector(".sell-button");
+
+buyBtn.addEventListener("click", clickBuy);
+sellBtn.addEventListener("click", clickSell);
 
 // -------------------------------------------------
 //                   WAFFLE BTN
@@ -22,7 +29,9 @@ waffleBTN.addEventListener("click", () => {
   // canAffordStoreItems();
 
   // Create a element with css class : css animation
-  waffleAnimation();
+  //waffleAnimation();
+  // Updates items that are affordable
+  canAffordStoreItems();
 });
 
 // -----------------------------------------------------------
