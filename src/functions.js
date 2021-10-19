@@ -1,16 +1,37 @@
+import { ITEM_LIST } from "./collection";
+// -------------------------------------------------
+//                  VARIABLES
+// -------------------------------------------------
+export let score = 0;
+
+let bigBossInterval;
+let intervalValue = 0;
+
+let clickValue = 1;
+var counter = document.querySelector(".counter");
+
+// -------------------------------------------------
+//                  FUNCTIONS
+// -------------------------------------------------
+
+export function udpateScore() {
+  score += clickValue;
+  counter.innerHTML = score;
+}
+
 export function waffleAnimation() {
   const littleWaffle = document.createElement("div");
   littleWaffle.classList.add("animation");
 
-  const waffleImg = document.createElement('img');
-  waffleImg.src = '/images/waffle.png';
+  const waffleImg = document.createElement("img");
+  waffleImg.src = "/images/waffle.png";
 
   setTimeout(() => {
     littleWaffle.remove();
   }, 2000);
 
   littleWaffle.appendChild(waffleImg);
-  document.querySelector('.waffle-section').appendChild(littleWaffle);
+  document.querySelector(".waffle-section").appendChild(littleWaffle);
 }
 
 export function autoClickerBUY(i) {

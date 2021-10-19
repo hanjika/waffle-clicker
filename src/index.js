@@ -1,40 +1,33 @@
-import { ITEM_LIST } from './collection';
-import { waffleAnimation,
+import { ITEM_LIST } from "./collection";
+import {
+  waffleAnimation,
   autoClickerBUY,
-  autoClickerSELL 
-} from './functions';
-import { canAffordStoreItems, clickBuy, clickSell } from './store-buttons';
-
-var counter = document.querySelector(".counter");
-const waffleBTN = document.querySelector(".waffle-img");
+  autoClickerSELL,
+  udpateScore,
+} from "./functions";
 
 // -------------------------------------------------
 //      ADD EVENT LISTENERS TO BUY/SELL BUTTONS
 // -------------------------------------------------
 
-const buyBtn = document.querySelector('.buy-button');
-const sellBtn = document.querySelector('.sell-button');
+const buyBtn = document.querySelector(".buy-button");
+const sellBtn = document.querySelector(".sell-button");
 
-buyBtn.addEventListener('click', clickBuy);
-sellBtn.addEventListener('click', clickSell);
-
-let score = 0;
-
-// -------------------------------------------------
-//                  BIG BOSS INTERVAL
-// -------------------------------------------------
-let bigBossInterval;
-let intervalValue = 0;
+buyBtn.addEventListener("click", clickBuy);
+sellBtn.addEventListener("click", clickSell);
 
 // -------------------------------------------------
 //                   WAFFLE BTN
 // -------------------------------------------------
-let clickValue = 1;
+const waffleBTN = document.querySelector(".waffle-img");
 
 waffleBTN.addEventListener("click", () => {
   // Update and Display score
-  score += clickValue;
-  counter.innerHTML = score;
+  udpateScore();
+
+  // Updates items that are affordable
+  // canAffordStoreItems();
+
   // Create a element with css class : css animation
   //waffleAnimation();
   // Updates items that are affordable
