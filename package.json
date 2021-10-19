@@ -1,0 +1,24 @@
+{
+  "name": "belgian-waffle-clicker",
+  "version": "1.0.0",
+  "description": "By Léon, Victor and Hanna",
+  "source": "src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "rm -rf dist/* && cp src/images/ dist/images/ -R && parcel build --public-url ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanjika/waffle-clicker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanjika/waffle-clicker/issues"
+  },
+  "homepage": "https://github.com/hanjika/waffle-clicker#readme",
+  "devDependencies": {
+    "parcel": "^2.0.0"
+  }
+}
