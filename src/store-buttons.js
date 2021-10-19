@@ -20,7 +20,6 @@ function clickBuy(e) {
     if (sellBtn.classList.contains('active')) {
         sellBtn.classList.remove('active');
     }
-
 }
 
 function clickSell(e) {
