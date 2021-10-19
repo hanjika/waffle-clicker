@@ -20,5 +20,9 @@
   "homepage": "https://github.com/hanjika/waffle-clicker#readme",
   "devDependencies": {
     "parcel": "^2.0.0"
+  },
+  "dependencies": {
+    "@parcel/resolver-glob": "^2.0.0",
+    "@parcel/transformer-image": "^2.0.0"
   }
 }

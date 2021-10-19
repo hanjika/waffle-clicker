@@ -1,4 +1,4 @@
-const ITEM_LIST = [
+export const ITEM_LIST = [
   {
     name: document.querySelector("#cursor"),
     value: 1,

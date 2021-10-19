@@ -1,4 +1,4 @@
-const SHOPITEMS = [
+export const SHOPITEMS = [
     {
         'item': 'cursor',
         'priceIncrease': '2',

@@ -1,16 +1,19 @@
-function waffleAnimation() {
+export function waffleAnimation() {
   const littleWaffle = document.createElement("div");
-
   littleWaffle.classList.add("animation");
+
+  const waffleImg = document.createElement('img');
+  waffleImg.src = '/images/waffle.png';
 
   setTimeout(() => {
     littleWaffle.remove();
   }, 2000);
 
-  document.body.appendChild(littleWaffle);
+  littleWaffle.appendChild(waffleImg);
+  document.querySelector('.waffle-section').appendChild(littleWaffle);
 }
 
-function autoClickerBUY(i) {
+export function autoClickerBUY(i) {
   if (score >= ITEM_LIST[i].price) {
     // Update and Display score
     score -= ITEM_LIST[i].price;
@@ -37,7 +40,7 @@ function autoClickerBUY(i) {
   }
 }
 
-function autoClickerSELL(i) {
+export function autoClickerSELL(i) {
   if (ITEM_LIST[i].quantity > 0) {
     // Update and Display score
     score += ITEM_LIST[i].price;

@@ -1,28 +1,27 @@
+import { SHOPITEMS } from './shop-items';
+import cursor from './images/cursor.png';
+import manneken from './images/manneken-pis.png';
+import jean from './images/jean-claude.gif';
+
+var counter = document.querySelector(".counter");
 var counterInterval = setInterval(increaseCounterfromPurchases, 1000);
 const storeButtons = document.querySelectorAll('.store-button');
-
-// -------------------------------------------------
-//      ADD EVENT LISTENERS TO BUY/SELL BUTTONS
-// -------------------------------------------------
-
-const buyBtn = document.querySelector('.buy-button');
-const sellBtn = document.querySelector('.sell-button');
-
-buyBtn.addEventListener('click', clickBuy);
-sellBtn.addEventListener('click', clickSell);
 
 // -------------------------------------------------
 //           BUY/SELL BUTTON FUNCTIONS
 // -------------------------------------------------
 
-function clickBuy(e) {
+const buyBtn = document.querySelector('.buy-button');
+const sellBtn = document.querySelector('.sell-button');
+
+export function clickBuy(e) {
     buyBtn.classList.toggle('active');
     if (sellBtn.classList.contains('active')) {
         sellBtn.classList.remove('active');
     }
 }
 
-function clickSell(e) {
+export function clickSell(e) {
     sellBtn.classList.toggle('active');
     if (buyBtn.classList.contains('active')) {
         buyBtn.classList.remove('active');
@@ -56,7 +55,7 @@ function subtractPriceFromCounter(item) {
 function addItemtoCity(item) {
     if (item === 'cursor') {
         const newImg = document.createElement('img');
-        newImg.src = 'images/cursor.png';
+        newImg.src = cursor;
         document.querySelector('.purchased-cursors').appendChild(newImg);
     } else {
         const city = document.querySelector('.purchased');
@@ -64,9 +63,9 @@ function addItemtoCity(item) {
 
         const newImg = document.createElement('img');
         if (item === 'jean-claude') {
-            newImg.src = 'images/jean-claude.gif';
+            newImg.src = jean;
         } else {
-            newImg.src = 'images/' + item + '.png';
+            newImg.src = item;
         }
         cityDiv.appendChild(newImg);
     }
@@ -110,7 +109,7 @@ function increaseCounterfromPurchases() {
     canAffordStoreItems();
 }
 
-function canAffordStoreItems() {
+export function canAffordStoreItems() {
     const allPrices = document.querySelectorAll('.price');
     const affordableItems = [];
 
