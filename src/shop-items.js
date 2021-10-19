@@ -1,17 +1,32 @@
 const SHOPITEMS = [
     {
         'item': 'cursor',
-        'price-increase': '2',
+        'priceIncrease': '2',
         'production': '0.1',
     },
     {
         'item': 'manneken-pis',
-        'price-increase': '2.5',
+        'priceIncrease': '2.5',
         'production': '2',
     },
     {
         'item': 'jean-claude',
-        'price-increase': '3',
+        'priceIncrease': '3',
         'production': '3',
+    },
+    {
+        'item': 'bakery',
+        'priceIncrease': '5',
+        'production': '5',
+    },
+    {
+        'item': 'atomium',
+        'priceIncrease': '10',
+        'production': '10',
+    },
+    {
+        'item': 'grand-place',
+        'priceIncrease': '20',
+        'production': '15',
     },
 ]

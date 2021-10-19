@@ -1,4 +1,4 @@
-const counter = document.querySelector(".counter");
+var counter = document.querySelector(".counter");
 const waffleBTN = document.querySelector(".waffle-img");
 let score = 0;
 
@@ -20,6 +20,7 @@ let priceAutoClick = 40;
 waffleBTN.addEventListener("click", () => {
   score += clickValue;
   counter.innerHTML = score;
+  canAffordStoreItems();
 });
 
 // --------------------------------------------------
