@@ -1,4 +1,25 @@
-function waffleAnimation() {
+import { ITEM_LIST } from "./collection";
+// -------------------------------------------------
+//                  VARIABLES
+// -------------------------------------------------
+export let score = 0;
+
+let bigBossInterval;
+let intervalValue = 0;
+
+let clickValue = 1;
+var counter = document.querySelector(".counter");
+
+// -------------------------------------------------
+//                  FUNCTIONS
+// -------------------------------------------------
+
+export function udpateScore() {
+  score += clickValue;
+  counter.innerHTML = score;
+}
+
+export function waffleAnimation() {
   const littleWaffle = document.createElement("div");
 
   littleWaffle.classList.add("animation");
@@ -10,7 +31,7 @@ function waffleAnimation() {
   document.body.appendChild(littleWaffle);
 }
 
-function autoClickerBUY(i) {
+export function autoClickerBUY(i) {
   if (score >= ITEM_LIST[i].price) {
     // Update and Display score
     score -= ITEM_LIST[i].price;
@@ -37,7 +58,7 @@ function autoClickerBUY(i) {
   }
 }
 
-function autoClickerSELL(i) {
+export function autoClickerSELL(i) {
   if (ITEM_LIST[i].quantity > 0) {
     // Update and Display score
     score += ITEM_LIST[i].price;
