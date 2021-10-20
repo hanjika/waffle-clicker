@@ -64,6 +64,7 @@ function sellItem(e) {
 
 function addItemtoCity(item) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   if (item === 'cursor') {
     const newImg = document.createElement('img');
     newImg.src = cursor;
@@ -80,6 +81,8 @@ function addItemtoCity(item) {
     } else {
         newImg.src = item;
 =======
+=======
+>>>>>>> 8a8ae83bee17812d28f53b95830b6328528e303f
   if (item === "cursor") {
     const newImg = document.createElement("img");
     newImg.src = cursor;
@@ -95,7 +98,10 @@ function addItemtoCity(item) {
       newImg.src = manneken;
     } else {
       newImg.src = item;
+<<<<<<< HEAD
 >>>>>>> 5a2934a6f39a4cba9f56e4b1ddc2587d24f97fbd
+=======
+>>>>>>> 8a8ae83bee17812d28f53b95830b6328528e303f
     }
     cityDiv.appendChild(newImg);
   }
