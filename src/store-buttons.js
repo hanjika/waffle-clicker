@@ -82,6 +82,7 @@ function addItemtoCity(item) {
     cityDiv.appendChild(newImg);
   }
 }
+
 // -------------------------------------------------
 //   Change values in description of purchased item
 // -------------------------------------------------
