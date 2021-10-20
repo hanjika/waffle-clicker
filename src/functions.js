@@ -99,7 +99,10 @@ export function autoClickerSELL(i) {
     ITEM_LIST[i].price /= 2;
     // Display(in buy section AND sell section) price
     ITEM_LIST[i].divPrice.innerHTML = ITEM_LIST[i].price;
-    ITEM_LIST_SELL[i].divPrice.innerHTML = ITEM_LIST[i].price / 2;
+    ITEM_LIST_SELL[i].divPrice.innerHTML /= 2;
+    if (ITEM_LIST_SELL[i].divPrice.innerHTML < ITEM_LIST[i].minSellPrice) {
+      ITEM_LIST_SELL[i].divPrice.innerHTML = ITEM_LIST[i].minSellPrice;
+    }
 
     // Delete and Update VALUE of bigBossInterval
     clearInterval(bigBossInterval);

@@ -3,6 +3,7 @@ export const ITEM_LIST = [
     name: document.querySelector(".cursorbtn"),
     value: 1,
     price: 10,
+    minSellPrice: 5,
     divQuantity: document.querySelector(".num-cursor"),
     divRentability: document.querySelector(".num-cursor-waffles"),
     divPrice: document.querySelector(".priceC"),
@@ -11,6 +12,7 @@ export const ITEM_LIST = [
     name: document.querySelector(".mpbtn"),
     value: 10,
     price: 100,
+    minSellPrice: 50,
     divQuantity: document.querySelector(".num-manneken-pis"),
     divRentability: document.querySelector(".num-manneken-pis-waffles"),
     divPrice: document.querySelector(".priceMP"),
@@ -19,6 +21,7 @@ export const ITEM_LIST = [
     name: document.querySelector(".jcvdbtn"),
     value: 25,
     price: 250,
+    minSellPrice: 125,
     divQuantity: document.querySelector(".num-jean-claude"),
     divRentability: document.querySelector(".num-jean-waffles"),
     divPrice: document.querySelector(".priceJC"),
@@ -27,6 +30,8 @@ export const ITEM_LIST = [
     name: document.querySelector(".bakerybtn"),
     value: 75,
     price: 750,
+    minSellPrice: 375,
+
     divQuantity: document.querySelector(".num-bakery"),
     divRentability: document.querySelector(".num-bakery-waffles"),
     divPrice: document.querySelector(".priceB"),
@@ -35,6 +40,7 @@ export const ITEM_LIST = [
     name: document.querySelector(".atombtn"),
     value: 150,
     price: 1500,
+    minSellPrice: 750,
     divQuantity: document.querySelector(".num-atomium"),
     divRentability: document.querySelector(".num-atomium-waffles"),
     divPrice: document.querySelector(".priceA"),
@@ -43,11 +49,13 @@ export const ITEM_LIST = [
     name: document.querySelector(".gpbtn"),
     value: 400,
     price: 4000,
+    minSellPrice: 2000,
     divQuantity: document.querySelector(".num-grand-place"),
     divRentability: document.querySelector(".num-grand-place-waffles"),
     divPrice: document.querySelector(".priceG"),
   },
 ];
+
 export const ITEM_LIST_SELL = [
   {
     name: document.querySelector(".cursorbtnSELL"),
