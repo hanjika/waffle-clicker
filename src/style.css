@@ -179,13 +179,32 @@ button {
   margin-top: 4vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   text-align: center;
 }
 
 .waffle-section div {
   width: 100%;
   text-align: center;
+}
+
+.waffle-section-text-container {
+    /* background-color: var(--darker-sky-blue); */
+    background-color: black;
+    border-radius: 25px;
+    max-width: 200px;
+    padding: 10px;
+}
+
+.counter,
+.textWaffle {
+    font-size: 150%;
+    color: var(--background-color);
+    text-shadow: 0px 0px 8px var(--bright-pink);
+}
+
+.wafflesPerSecond {
+    color: var(--bright-pink);
 }
 
 .waffle-container {
@@ -205,8 +224,8 @@ button {
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-delay: 0;
-  animation-direction: alternate;
   z-index: 1;
+  pointer-events: none;
 }
 
 @keyframes waffle {
@@ -229,19 +248,28 @@ button {
 }
 
 .purchased-cursors {
-  width: 300px;
-  height: 300px;
-  position: absolute;
-  pointer-events: none;
+    display: flex;
+    justify-content: center;
+    width: 280px;
+    margin: 0 10px;
 }
 
 .purchased-cursors img {
   width: 10px;
-  position: absolute;
-  bottom: 140px;
-  right: 240px;
-  animation: spinCursor 30s linear infinite;
-  display: block;
+  padding: 0 4px;
+  animation: cursorTap 1s linear infinite;
+}
+
+@keyframes cursorTap {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 h2 {
@@ -255,16 +283,6 @@ h2 {
 .purchased div {
   background-size: cover;
   height: 14vh;
-}
-
-@keyframes spinCursor {
-  0% {
-    transform: rotate(360deg) translateX(150px) rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(0deg) translateX(150px) rotate(-360deg);
-  }
 }
 
 .purchased .manneken-pis {
