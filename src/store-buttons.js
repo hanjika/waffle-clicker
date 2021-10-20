@@ -15,17 +15,17 @@ const buyBtn = document.querySelector(".buy-button");
 const sellBtn = document.querySelector(".sell-button");
 
 export function clickBuy(e) {
-    buyBtn.classList.toggle("active");
-    if (sellBtn.classList.contains("active")) {
-        sellBtn.classList.remove("active");
-    }
+  buyBtn.classList.toggle("active");
+  if (sellBtn.classList.contains("active")) {
+    sellBtn.classList.remove("active");
+  }
 }
 
 export function clickSell(e) {
-    sellBtn.classList.toggle("active");
-    if (buyBtn.classList.contains("active")) {
-        buyBtn.classList.remove("active");
-    }
+  sellBtn.classList.toggle("active");
+  if (buyBtn.classList.contains("active")) {
+    buyBtn.classList.remove("active");
+  }
 }
 
 // -------------------------------------------------
@@ -33,16 +33,16 @@ export function clickSell(e) {
 // -------------------------------------------------
 
 function purchaseItem(e) {
-    var item = e.target.id;
-    addItemtoCity(item);
-    subtractPriceFromCounter(e.target);
-    editItemDescription(e.target);
+  var item = e.target.id;
+  addItemtoCity(item);
+  subtractPriceFromCounter(e.target);
+  editItemDescription(e.target);
 }
 
 function subtractPriceFromCounter(item) {
-    const price = parseInt(item.querySelector(".price").innerText);
-    const counterMoney = parseInt(counter.innerText);
-    counter.innerText = counterMoney - price;
+  const price = parseInt(item.querySelector(".price").innerText);
+  const counterMoney = parseInt(counter.innerText);
+  counter.innerText = counterMoney - price;
 }
 
 // -------------------------------------------------
@@ -50,10 +50,10 @@ function subtractPriceFromCounter(item) {
 // -------------------------------------------------
 
 function sellItem(e) {
-    var item = e.target.id;
-    //removeItemFromCity
-    //addPriceToCounter
-    //editItemDescriptionSold
+  var item = e.target.id;
+  //removeItemFromCity
+  //addPriceToCounter
+  //editItemDescriptionSold
 }
 
 //function addPriceToCounter
@@ -63,27 +63,25 @@ function sellItem(e) {
 // -------------------------------------------------
 
 function addItemtoCity(item) {
-  if (item === 'cursor') {
-    const newImg = document.createElement('img');
+  if (item === "cursor") {
+    const newImg = document.createElement("img");
     newImg.src = cursor;
-    newImg.classList.add('cursor-animation');
-    document.querySelector('.purchased-cursors').appendChild(newImg);
+    document.querySelector(".purchased-cursors").appendChild(newImg);
   } else {
-    const city = document.querySelector('.purchased');
-    const cityDiv = city.querySelector('.' + item);
+    const city = document.querySelector(".purchased");
+    const cityDiv = city.querySelector("." + item);
 
-    const newImg = document.createElement('img');
-    if (item === 'jean-claude') {
-        newImg.src = jean;
-    } else if (item === 'manneken-pis') {
-        newImg.src = manneken;
+    const newImg = document.createElement("img");
+    if (item === "jean-claude") {
+      newImg.src = jean;
+    } else if (item === "manneken-pis") {
+      newImg.src = manneken;
     } else {
-        newImg.src = item;
+      newImg.src = item;
     }
     cityDiv.appendChild(newImg);
   }
 }
-
 // -------------------------------------------------
 //   Change values in description of purchased item
 // -------------------------------------------------
@@ -98,14 +96,14 @@ function editItemDescription(item) {
   item.querySelector(".price").innerText = newNum;
 
   for (const shopItem of SHOPITEMS) {
-      if (shopItem.item === item.id) {
-          item.querySelector(".price").innerText = price * shopItem.priceIncrease;
-          var newNumWaffles = newNum * shopItem.production;
-          if (item.id === "cursor") {
-              newNumWaffles = newNumWaffles.toFixed(1);
-          }
-          item.querySelector(".num-waffles").innerText = newNumWaffles;
+    if (shopItem.item === item.id) {
+      item.querySelector(".price").innerText = price * shopItem.priceIncrease;
+      var newNumWaffles = newNum * shopItem.production;
+      if (item.id === "cursor") {
+        newNumWaffles = newNumWaffles.toFixed(1);
       }
+      item.querySelector(".num-waffles").innerText = newNumWaffles;
+    }
   }
 }
 
@@ -114,10 +112,10 @@ function increaseCounterfromPurchases() {
   const wafflesArr = Array.from(wafflesPerSec);
 
   for (const wafflesPerItem of wafflesPerSec) {
-      const intWaffles = parseInt(wafflesPerItem.innerText);
-      let toAdd = parseInt(counter.innerText);
-      toAdd += intWaffles;
-      counter.innerText = toAdd;
+    const intWaffles = parseInt(wafflesPerItem.innerText);
+    let toAdd = parseInt(counter.innerText);
+    toAdd += intWaffles;
+    counter.innerText = toAdd;
   }
   canAffordStoreItems();
 }
@@ -127,13 +125,13 @@ export function canAffordStoreItems() {
   const affordableItems = [];
 
   for (const price of allPrices) {
-      const priceVal = parseInt(price.innerText);
-      const counterNum = parseInt(counter.innerText);
+    const priceVal = parseInt(price.innerText);
+    const counterNum = parseInt(counter.innerText);
 
-      if (priceVal <= counterNum) {
-          const item = price.id;
-          affordableItems.push(item);
-      }
+    if (priceVal <= counterNum) {
+      const item = price.id;
+      affordableItems.push(item);
+    }
   }
   itemAvailableToBuy(affordableItems);
 }
@@ -141,11 +139,11 @@ export function canAffordStoreItems() {
 export function canSell() {
   const storeSellButtons = document.querySelectorAll(".sell-store-button");
   for (const sellStoreBtn of storeSellButtons) {
-      const amount = sellStoreBtn.document.querySelector(".amount");
-      if (amount !== "") {
-          sellStoreBtn.classList.add("available");
-          sellStoreBtn.addEventListener("click", sellItem);
-      }
+    const amount = sellStoreBtn.document.querySelector(".amount");
+    if (amount !== "") {
+      sellStoreBtn.classList.add("available");
+      sellStoreBtn.addEventListener("click", sellItem);
+    }
   }
 }
 
@@ -153,20 +151,20 @@ function itemAvailableToBuy(affordableItems) {
   const storeButtons = document.querySelectorAll(".store-button");
   refreshAvailability(storeButtons);
   for (const storeBtn of storeButtons) {
-      for (const affordItem of affordableItems) {
-          if (storeBtn.id === affordItem) {
-              storeBtn.classList.add("available");
-              storeBtn.addEventListener("click", purchaseItem);
-          }
+    for (const affordItem of affordableItems) {
+      if (storeBtn.id === affordItem) {
+        storeBtn.classList.add("available");
+        storeBtn.addEventListener("click", purchaseItem);
       }
+    }
   }
 }
 
 function refreshAvailability(storeButtons) {
   for (const storeBtn of storeButtons) {
-      if (storeBtn.classList.contains("available")) {
-          storeBtn.classList.remove("available");
-          storeBtn.removeEventListener("click", purchaseItem);
-      }
+    if (storeBtn.classList.contains("available")) {
+      storeBtn.classList.remove("available");
+      storeBtn.removeEventListener("click", purchaseItem);
+    }
   }
 }
