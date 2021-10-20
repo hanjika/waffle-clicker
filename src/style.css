@@ -92,11 +92,11 @@ button {
     filter: grayscale(1);
 }
 
-.buy-section > .available {
+.buy-section>.available {
     background-color: var(--aquamarine);
 }
 
-.sell-section > .available {
+.sell-section>.available {
     background-color: var(--cherry-blossom);
 }
 
@@ -109,8 +109,8 @@ button {
     filter: none;
 }
 
-.store-button > *, 
-.sell-store-button > * {
+.store-button>*,
+.sell-store-button>* {
     pointer-events: none;
 }
 
@@ -137,15 +137,15 @@ button {
     display: none;
 }
 
-.store-button:hover, 
+.store-button:hover,
 .store-button:active,
 .sell-store-button:hover,
 .sell-store-button:active {
     box-shadow: grey 0px 30px 60px -12px inset, black 0px 18px 36px -18px inset;
 }
 
-.sell-section > .available:hover, 
-.sell-section > .available:active {
+.sell-section>.available:hover,
+.sell-section>.available:active {
     box-shadow: var(--bright-pink) 0px 30px 60px -12px inset, var(--bright-pink) 0px 18px 36px -18px inset;
 }
 
