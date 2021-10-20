@@ -39,6 +39,8 @@ export function clickSell(e) {
 function purchaseItem(e) {
   var item = e.target.id;
   addItemtoCity(item);
+  canAffordStoreItems();
+  canSell();
   // subtractPriceFromCounter(e.target);
   // editItemDescription(e.target);
 }
@@ -57,6 +59,8 @@ function sellItem(e) {
   console.log("yayaya");
   var item = e.target.id;
   removeItemFromCity(item);
+  canAffordStoreItems();
+  canSell();
 }
 
 // -------------------------------------------------
@@ -89,6 +93,11 @@ function addItemtoCity(item) {
 }
 
 function removeItemFromCity(item) {
+  if (item === "cursor") {
+    const allCursors = document.querySelector(".purchased-cursors");
+    allCursors.removeChild(allCursors.firstChild);
+  }
+
   const city = document.querySelector(".purchased");
   const cityDiv = city.querySelector("." + item);
 
@@ -134,7 +143,8 @@ function increaseCounterfromPurchases() {
 }
 
 export function canAffordStoreItems() {
-  const allPrices = document.querySelectorAll(".price");
+  const buySection = document.querySelector(".buy-section");
+  const allPrices = buySection.querySelectorAll(".price");
   const affordableItems = [];
 
   for (const price of allPrices) {
