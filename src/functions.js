@@ -24,6 +24,7 @@ export function waffleAnimation() {
     const littleWaffle = document.createElement("div");
     littleWaffle.classList.add("animation");
 
+
     const waffleImg = document.createElement("img");
     waffleImg.src = waffleImgSrc;
 
