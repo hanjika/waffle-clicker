@@ -95,7 +95,7 @@ export function autoClickerSELL(i) {
     ITEM_LIST_SELL[i].divRentability.innerHTML =
       ITEM_LIST_SELL[i].quantity * ITEM_LIST[i].value;
 
-    // Upadate price
+    // Update price
     ITEM_LIST[i].price /= 2;
     // Display(in buy section AND sell section) price
     ITEM_LIST[i].divPrice.innerHTML = ITEM_LIST[i].price;
@@ -103,6 +103,9 @@ export function autoClickerSELL(i) {
     if (ITEM_LIST_SELL[i].divPrice.innerHTML < ITEM_LIST[i].minSellPrice) {
       ITEM_LIST_SELL[i].divPrice.innerHTML = ITEM_LIST[i].minSellPrice;
     }
+
+    // Remove 1 img
+    ITEM_LIST[i].imgCont.children[0].remove();
 
     // Delete and Update VALUE of bigBossInterval
     clearInterval(bigBossInterval);

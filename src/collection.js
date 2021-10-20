@@ -7,6 +7,7 @@ export const ITEM_LIST = [
     divQuantity: document.querySelector(".num-cursor"),
     divRentability: document.querySelector(".num-cursor-waffles"),
     divPrice: document.querySelector(".priceC"),
+    imgCont: document.querySelector(".purchased-cursors"),
   },
   {
     name: document.querySelector(".mpbtn"),
@@ -16,6 +17,7 @@ export const ITEM_LIST = [
     divQuantity: document.querySelector(".num-manneken-pis"),
     divRentability: document.querySelector(".num-manneken-pis-waffles"),
     divPrice: document.querySelector(".priceMP"),
+    imgCont: document.querySelector(".manneken-pis"),
   },
   {
     name: document.querySelector(".jcvdbtn"),
@@ -25,16 +27,17 @@ export const ITEM_LIST = [
     divQuantity: document.querySelector(".num-jean-claude"),
     divRentability: document.querySelector(".num-jean-waffles"),
     divPrice: document.querySelector(".priceJC"),
+    imgCont: document.querySelector(".jean-claude"),
   },
   {
     name: document.querySelector(".bakerybtn"),
     value: 75,
     price: 750,
     minSellPrice: 375,
-
     divQuantity: document.querySelector(".num-bakery"),
     divRentability: document.querySelector(".num-bakery-waffles"),
     divPrice: document.querySelector(".priceB"),
+    imgCont: document.querySelector(".bakery"),
   },
   {
     name: document.querySelector(".atombtn"),
@@ -44,6 +47,7 @@ export const ITEM_LIST = [
     divQuantity: document.querySelector(".num-atomium"),
     divRentability: document.querySelector(".num-atomium-waffles"),
     divPrice: document.querySelector(".priceA"),
+    imgCont: document.querySelector(".atomium"),
   },
   {
     name: document.querySelector(".gpbtn"),
@@ -53,6 +57,7 @@ export const ITEM_LIST = [
     divQuantity: document.querySelector(".num-grand-place"),
     divRentability: document.querySelector(".num-grand-place-waffles"),
     divPrice: document.querySelector(".priceG"),
+    imgCont: document.querySelector(".grand-place"),
   },
 ];
 
