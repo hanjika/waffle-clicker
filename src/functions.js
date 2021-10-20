@@ -29,10 +29,10 @@ export function waffleAnimation() {
 
   setTimeout(() => {
     littleWaffle.remove();
-  }, 20000);
+  }, 2000);
 
   littleWaffle.appendChild(waffleImg);
-  document.querySelector(".waffle-section").appendChild(littleWaffle);
+  document.querySelector(".waffle-container").appendChild(littleWaffle);
 }
 
 export function autoClickerBUY(i) {
