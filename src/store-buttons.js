@@ -93,6 +93,11 @@ function addItemtoCity(item) {
 }
 
 function removeItemFromCity(item) {
+  if (item === 'cursor') {
+    const allCursors = document.querySelector('.purchased-cursors');
+    allCursors.removeChild(allCursors.firstChild);
+  }
+  
   const city = document.querySelector(".purchased");
   const cityDiv = city.querySelector("." + item);
 
