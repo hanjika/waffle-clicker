@@ -229,7 +229,7 @@ button {
     position: absolute;
     bottom: 140px;
     right: 240px;
-    animation: aroundWaffle 30s linear infinite;
+    animation: spinCursor 30s linear infinite;
     display: block;
 }
 
@@ -238,27 +238,13 @@ button {
     height: 14vh;
 }
 
-/* .cursor-animation {
-    animation: spin1 2s infinite linear;
-} */
-
-@keyframes aroundWaffle {
+@keyframes spinCursor {
     0% { 
         transform: rotate(360deg) translateX(150px) rotate(0deg);
     }
     
     100% { 
         transform: rotate(0deg) translateX(150px) rotate(-360deg);
-    }
-} 
-
-@keyframes rotateSelf {
-    0% { 
-        transform: rotate(0deg);
-    }
-    
-    100% { 
-        transform: rotate(360deg);
     }
 }
 
