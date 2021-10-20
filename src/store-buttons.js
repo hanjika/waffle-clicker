@@ -55,13 +55,10 @@ function subtractPriceFromCounter(item) {
 // -------------------------------------------------
 
 function sellItem(e) {
+  console.log("yayaya")
   var item = e.target.id;
-  //removeItemFromCity
-  //addPriceToCounter
-  //editItemDescriptionSold
+  removeItemFromCity(item);
 }
-
-//function addPriceToCounter
 
 // -------------------------------------------------
 //          DISPLAYING ITEM IN CITY PICTURE
@@ -90,6 +87,13 @@ function addItemtoCity(item) {
     }
     cityDiv.appendChild(newImg);
   }
+}
+
+function removeItemFromCity(item) {
+  const city = document.querySelector(".purchased");
+  const cityDiv = city.querySelector("." + item);
+
+  cityDiv.removeChild(cityDiv.firstChild);
 }
 
 // -------------------------------------------------
@@ -158,8 +162,10 @@ export function canSell() {
   for (let item of ITEM_LIST_SELL) {
     if (item.quantity > 0) {
       item.name.classList.add("available");
+      item.name.addEventListener("click", sellItem);
     } else {
       item.name.classList.remove("available");
+      item.name.removeEventListener("click", sellItem);
     }
   }
 }
