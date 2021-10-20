@@ -1,5 +1,5 @@
 import { ITEM_LIST } from "./collection";
-import waffleImgSrc from './images/waffle.png'
+import waffleImgSrc from "./images/waffle.png";
 // -------------------------------------------------
 //                  VARIABLES
 // -------------------------------------------------

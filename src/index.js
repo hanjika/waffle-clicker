@@ -14,9 +14,6 @@ import { canAffordStoreItems, canSell } from "./store-buttons";
 const buyBtn = document.querySelector(".buy-button");
 const sellBtn = document.querySelector(".sell-button");
 
-// buyBtn.addEventListener("click", clickBuy);
-// sellBtn.addEventListener("click", clickSell);
-
 // -------------------------------------------------
 //                   WAFFLE BTN
 // -------------------------------------------------
