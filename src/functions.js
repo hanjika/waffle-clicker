@@ -26,13 +26,13 @@ export function waffleAnimation() {
 
     const waffleImg = document.createElement("img");
     waffleImg.src = waffleImgSrc;
+  
+  setTimeout(() => {
+    littleWaffle.remove();
+  }, 2000);
 
-    setTimeout(() => {
-        littleWaffle.remove();
-    }, 20000);
-
-    littleWaffle.appendChild(waffleImg);
-    document.querySelector(".waffle-section").appendChild(littleWaffle);
+  littleWaffle.appendChild(waffleImg);
+  document.querySelector(".waffle-container").appendChild(littleWaffle);
 }
 
 export function autoClickerBUY(i) {
