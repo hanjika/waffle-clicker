@@ -66,7 +66,6 @@ function addItemtoCity(item) {
   if (item === 'cursor') {
     const newImg = document.createElement('img');
     newImg.src = cursor;
-    newImg.classList.add('cursor-animation');
     document.querySelector('.purchased-cursors').appendChild(newImg);
   } else {
     const city = document.querySelector('.purchased');
