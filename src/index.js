@@ -36,7 +36,7 @@ const sellSection = document.querySelector(".sell-section");
 
 // BUY BTN
 buyBtn.addEventListener("click", () => {
-  buySection.style.display = "block";
+  buySection.style.display = "flex";
   sellSection.style.display = "none";
   buyBtn.classList.toggle("active");
   if (sellBtn.classList.contains("active")) {
@@ -46,7 +46,7 @@ buyBtn.addEventListener("click", () => {
 
 // SELL BTN
 sellBtn.addEventListener("click", () => {
-  sellSection.style.display = "block";
+  sellSection.style.display = "flex";
   buySection.style.display = "none";
   sellBtn.classList.toggle("active");
   if (buyBtn.classList.contains("active")) {
