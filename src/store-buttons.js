@@ -4,7 +4,7 @@ import manneken from "./images/manneken-pis.png";
 import jean from "./images/jean-claude.gif";
 
 var counter = document.querySelector(".counter");
-var counterInterval = setInterval(increaseCounterfromPurchases, 1000);
+// var counterInterval = setInterval(increaseCounterfromPurchases, 1000);
 const storeButtons = document.querySelectorAll(".store-button");
 
 // -------------------------------------------------
@@ -35,8 +35,8 @@ export function clickSell(e) {
 function purchaseItem(e) {
   var item = e.target.id;
   addItemtoCity(item);
-  subtractPriceFromCounter(e.target);
-  editItemDescription(e.target);
+  // subtractPriceFromCounter(e.target);
+  // editItemDescription(e.target);
 }
 
 function subtractPriceFromCounter(item) {
