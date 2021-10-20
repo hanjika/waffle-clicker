@@ -40,6 +40,8 @@ export function clickSell(e) {
 function purchaseItem(e) {
   var item = e.target.id;
   addItemtoCity(item);
+  canAffordStoreItems();
+  canSell();
   // subtractPriceFromCounter(e.target);
   // editItemDescription(e.target);
 }
@@ -57,6 +59,8 @@ function subtractPriceFromCounter(item) {
 function sellItem(e) {
   var item = e.target.id;
   removeItemFromCity(item);
+  canAffordStoreItems();
+  canSell();
 }
 
 // -------------------------------------------------
