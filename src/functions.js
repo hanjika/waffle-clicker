@@ -1,5 +1,5 @@
 import { ITEM_LIST } from "./collection";
-import waffleImgSrc from './images/waffle.png'
+import waffleImgSrc from "./images/waffle.png";
 // -------------------------------------------------
 //                  VARIABLES
 // -------------------------------------------------
@@ -24,16 +24,15 @@ export function waffleAnimation() {
     const littleWaffle = document.createElement("div");
     littleWaffle.classList.add("animation");
 
-
     const waffleImg = document.createElement("img");
     waffleImg.src = waffleImgSrc;
 
     setTimeout(() => {
         littleWaffle.remove();
-    }, 20000);
+    }, 2000);
 
     littleWaffle.appendChild(waffleImg);
-    document.querySelector(".waffle-section").appendChild(littleWaffle);
+    document.querySelector(".waffle-container").appendChild(littleWaffle);
 }
 
 export function autoClickerBUY(i) {
