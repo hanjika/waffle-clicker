@@ -9,7 +9,6 @@ import grandPlace from "./images/grand-place.png";
 import { ITEM_LIST_SELL } from "./collection";
 
 var counter = document.querySelector(".counter");
-// var counterInterval = setInterval(increaseCounterfromPurchases, 1000);
 const storeButtons = document.querySelectorAll(".store-button");
 
 // -------------------------------------------------
@@ -55,7 +54,7 @@ function subtractPriceFromCounter(item) {
 // -------------------------------------------------
 
 function sellItem(e) {
-  console.log("yayaya")
+  console.log("yayaya");
   var item = e.target.id;
   removeItemFromCity(item);
 }

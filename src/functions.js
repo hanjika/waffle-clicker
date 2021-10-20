@@ -9,10 +9,29 @@ import {
 // -------------------------------------------------
 //                  VARIABLES
 // -------------------------------------------------
-export let score = 0;
+let scoreLocalStorage = window.localStorage.getItem("score");
+export let score = Number(scoreLocalStorage);
 
 let bigBossInterval;
-let intervalValue = 0;
+let intervalLocalStorage = window.localStorage.getItem("intervalValue");
+let intervalValue = Number(intervalLocalStorage);
+
+bigBossInterval = setInterval(() => {
+  // Update and Display score
+  score += intervalValue;
+  counter.innerHTML = score;
+  // Updates items that are affordable or owned
+  canAffordStoreItems();
+  canSell();
+
+  // Local Storage : IntervalValue
+  window.localStorage.setItem(
+    "intervalValue",
+    JSON.stringify(intervalValue.valueOf())
+  );
+  // Local Storage : Score
+  window.localStorage.setItem("score", JSON.stringify(score.valueOf()));
+}, 1000);
 
 let clickValue = 1;
 var counter = document.querySelector(".counter");
@@ -74,6 +93,14 @@ export function autoClickerBUY(i) {
       // Updates items that are affordable or owned
       canAffordStoreItems();
       canSell();
+
+      // Local Storage : IntervalValue
+      window.localStorage.setItem(
+        "intervalValue",
+        JSON.stringify(intervalValue.valueOf())
+      );
+      // Local Storage : Score
+      window.localStorage.setItem("score", JSON.stringify(score.valueOf()));
     }, 1000);
   }
 }
@@ -104,8 +131,8 @@ export function autoClickerSELL(i) {
       ITEM_LIST_SELL[i].divPrice.innerHTML = ITEM_LIST[i].minSellPrice;
     }
 
-    // Remove 1 img
-    ITEM_LIST[i].imgCont.children[0].remove();
+    // // Remove 1 img
+    // ITEM_LIST[i].imgCont.children[0].remove();
 
     // Delete and Update VALUE of bigBossInterval
     clearInterval(bigBossInterval);
@@ -118,6 +145,14 @@ export function autoClickerSELL(i) {
       // Updates items that are affordable or owned
       canAffordStoreItems();
       canSell();
+
+      // Local Storage : IntervalValue
+      window.localStorage.setItem(
+        "intervalValue",
+        JSON.stringify(intervalValue.valueOf())
+      );
+      // Local Storage : Score
+      window.localStorage.setItem("score", JSON.stringify(score.valueOf()));
     }, 1000);
   }
 }
