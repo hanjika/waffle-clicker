@@ -166,6 +166,7 @@ button {
 
 .waffle-section {
     height: 80vh;
+    margin-top: 4vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -179,6 +180,7 @@ button {
 
 .waffle-container {
     position: relative;
+    margin-top: 2vh;
 }
 
 .waffle-img {
@@ -208,7 +210,6 @@ button {
 }
 
 .purchased {
-    text-align: center;
     color: var(--background-color);
     background-color: var(--chocolate);
 }
@@ -231,6 +232,14 @@ button {
     right: 240px;
     animation: spinCursor 30s linear infinite;
     display: block;
+}
+
+h2 {
+    height: 10vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .purchased div {
