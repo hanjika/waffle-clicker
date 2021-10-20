@@ -9,11 +9,10 @@
 }
 
 body {
-  background-image: url("images/choc-background.jpg");
-  background-size: cover;
-  /* //background-color: #073B4C; */
-  color: white;
-  font-family: "Skranji", cursive;
+    background-image: url('images/choc-background.jpg');
+    background-size: cover;
+    color: white;
+    font-family: 'Skranji', cursive;
 }
 
 header {
