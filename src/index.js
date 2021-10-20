@@ -14,6 +14,19 @@ import {
 } from "./store-buttons";
 
 // -------------------------------------------------
+//                TITLE
+// -------------------------------------------------
+
+const counter = document.querySelector('.counter');
+document.title = counter.innerText + " Waffles | Belgian Waffle Clicker"
+
+setInterval(updateTitleScore, 3000);
+
+function updateTitleScore() {
+  document.title = counter.innerText + " Waffles | Belgian Waffle Clicker"
+}
+
+// -------------------------------------------------
 //                BUY/SELL BUTTONS
 // -------------------------------------------------
 const buyBtn = document.querySelector(".buy-button");
