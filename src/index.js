@@ -6,7 +6,7 @@ import {
   waffleAnimation,
   autoClickerBUY,
   autoClickerSELL,
-  udpateScore,
+  udpateScore
 } from "./functions";
 import { 
   canAffordStoreItems, 
@@ -21,9 +21,21 @@ const counter = document.querySelector('.counter');
 document.title = counter.innerText + " Waffles | Belgian Waffle Clicker"
 
 setInterval(updateTitleScore, 3000);
+setInterval(wafflesPerSecond, 1000);
 
 function updateTitleScore() {
   document.title = counter.innerText + " Waffles | Belgian Waffle Clicker"
+}
+
+function wafflesPerSecond() {
+  const allPerSec = document.querySelectorAll('.num-waffles');
+  let num = 0;
+
+  for (const onePerSec of allPerSec) {
+    const number = parseInt(onePerSec.innerText);
+    num += number/2;
+  }
+  document.querySelector('.perSecond').innerText = num;
 }
 
 // -------------------------------------------------

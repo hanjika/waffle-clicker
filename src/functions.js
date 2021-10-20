@@ -4,7 +4,7 @@ import {
   canAffordStoreItems,
   canSell,
   itemAvailableToBuy,
-  refreshAvailability,
+  refreshAvailability
 } from "./store-buttons";
 // -------------------------------------------------
 //                  VARIABLES
@@ -113,6 +113,7 @@ export function autoClickerSELL(i) {
       score += intervalValue;
       counter.innerHTML = score;
       // Updates items that are affordable or owned
+      wafflesPerSecond();
       canAffordStoreItems();
       canSell();
     }, 1000);
