@@ -217,13 +217,49 @@ button {
     width: 5vw;
 }
 
+.purchased-cursors {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    pointer-events: none;
+}
+
 .purchased-cursors img {
-    width: 1vw;
+    width: 10px;
+    position: absolute;
+    bottom: 140px;
+    right: 240px;
+    animation: aroundWaffle 30s linear infinite;
+    display: block;
 }
 
 .purchased div {
     background-size: cover;
     height: 14vh;
+}
+
+/* .cursor-animation {
+    animation: spin1 2s infinite linear;
+} */
+
+@keyframes aroundWaffle {
+    0% { 
+        transform: rotate(360deg) translateX(150px) rotate(0deg);
+    }
+    
+    100% { 
+        transform: rotate(0deg) translateX(150px) rotate(-360deg);
+    }
+} 
+
+@keyframes rotateSelf {
+    0% { 
+        transform: rotate(0deg);
+    }
+    
+    100% { 
+        transform: rotate(360deg);
+    }
 }
 
 .purchased .manneken-pis {
