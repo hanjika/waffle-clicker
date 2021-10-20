@@ -119,7 +119,6 @@ function addItemtoCity(item) {
   }
 
   export function canAffordStoreItems() {
-    console.log("here");
     const allPrices = document.querySelectorAll(".price");
     const affordableItems = [];
 

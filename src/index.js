@@ -23,10 +23,13 @@ waffleBTN.addEventListener("click", () => {
   // Update and Display score
   udpateScore();
 
+  // Updates items that are affordable
+  // canAffordStoreItems();
+
   // Create a element with css class : css animation
   waffleAnimation();
 
-  // Updates items that are affordable
+  // Updates items that are affordable or owned
   if (buyBtn.classList.contains("active")) {
     canAffordStoreItems();
   } else {
