@@ -1,11 +1,17 @@
-import { ITEM_LIST, ITEM_LIST_SELL } from "./collection";
+import { 
+  ITEM_LIST, 
+  ITEM_LIST_SELL 
+} from "./collection";
 import {
   waffleAnimation,
   autoClickerBUY,
   autoClickerSELL,
   udpateScore,
 } from "./functions";
-import { canAffordStoreItems, canSell } from "./store-buttons";
+import { 
+  canAffordStoreItems, 
+  canSell 
+} from "./store-buttons";
 
 // -------------------------------------------------
 //                BUY/SELL BUTTONS
