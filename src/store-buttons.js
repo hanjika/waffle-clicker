@@ -74,6 +74,8 @@ function addItemtoCity(item) {
     const newImg = document.createElement("img");
     if (item === "jean-claude") {
       newImg.src = jean;
+    } else if (item === "manneken-pis") {
+      newImg.src = manneken;
     } else {
       newImg.src = item;
     }

@@ -5,7 +5,7 @@ import {
   autoClickerSELL,
   udpateScore,
 } from "./functions";
-import { canSell, canAffordStoreItems } from "./store-buttons";
+import { canAffordStoreItems, canSell } from "./store-buttons";
 
 // -------------------------------------------------
 //      ADD EVENT LISTENERS TO BUY/SELL BUTTONS
