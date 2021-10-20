@@ -73,9 +73,9 @@ button {
 .store-button,
 .sell-store-button {
     display: grid;
-    grid-template-columns: 20% 60% 20%;
+    grid-template-columns: 20% 70% 10%;
     background-color: grey;
-    width: 30vw;
+    width: ;
     height: 10vh;
     border: none;
     border-radius: 10px;
@@ -90,6 +90,13 @@ button {
     justify-self: center;
     -webkit-filter: grayscale(1);
     filter: grayscale(1);
+}
+
+.buy-section,
+.sell-section, 
+.store-button-description {
+    display: flex;
+    flex-direction: column;
 }
 
 .buy-section>.available {
@@ -120,8 +127,6 @@ button {
 }
 
 .store-button-description {
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
 }
 
@@ -166,6 +171,7 @@ button {
 
 .waffle-section {
     height: 80vh;
+    margin-top: 4vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -179,6 +185,7 @@ button {
 
 .waffle-container {
     position: relative;
+    margin-top: 2vh;
 }
 
 .waffle-img {
@@ -208,7 +215,6 @@ button {
 }
 
 .purchased {
-    text-align: center;
     color: var(--background-color);
     background-color: var(--chocolate);
 }
@@ -231,6 +237,14 @@ button {
     right: 240px;
     animation: spinCursor 30s linear infinite;
     display: block;
+}
+
+h2 {
+    height: 10vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .purchased div {

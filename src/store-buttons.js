@@ -1,7 +1,10 @@
 import { SHOPITEMS } from "./shop-items";
 import cursor from "./images/cursor.png";
 import manneken from "./images/manneken-pis.png";
-import jean from "./images/jean-claude.gif";
+import jeanclaude from "./images/jeanclaude.png";
+import bakery from "./images/bakery.png";
+import atomium from "./images/atomium.png";
+import grandPlace from "./images/grand-place.png";
 
 import { ITEM_LIST_SELL } from "./collection";
 
@@ -75,11 +78,15 @@ function addItemtoCity(item) {
 
     const newImg = document.createElement("img");
     if (item === "jean-claude") {
-      newImg.src = jean;
+      newImg.src = jeanclaude;
     } else if (item === "manneken-pis") {
       newImg.src = manneken;
-    } else {
-      newImg.src = item;
+    } else if (item === "grand-place") {
+      newImg.src = grandPlace;
+    } else if (item === "bakery") {
+      newImg.src = bakery;
+    } else if (item === "atomium") {
+      newImg.src = atomium;
     }
     cityDiv.appendChild(newImg);
   }

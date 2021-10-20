@@ -1,11 +1,30 @@
-import { ITEM_LIST, ITEM_LIST_SELL } from "./collection";
+import { 
+  ITEM_LIST, 
+  ITEM_LIST_SELL 
+} from "./collection";
 import {
   waffleAnimation,
   autoClickerBUY,
   autoClickerSELL,
   udpateScore,
 } from "./functions";
-import { canAffordStoreItems, canSell } from "./store-buttons";
+import { 
+  canAffordStoreItems, 
+  canSell 
+} from "./store-buttons";
+
+// -------------------------------------------------
+//                TITLE
+// -------------------------------------------------
+
+const counter = document.querySelector('.counter');
+document.title = counter.innerText + " Waffles | Belgian Waffle Clicker"
+
+setInterval(updateTitleScore, 3000);
+
+function updateTitleScore() {
+  document.title = counter.innerText + " Waffles | Belgian Waffle Clicker"
+}
 
 // -------------------------------------------------
 //                BUY/SELL BUTTONS
