@@ -1,6 +1,6 @@
 export const ITEM_LIST = [
   {
-    name: document.querySelector(".cursorBtn"),
+    name: document.querySelector(".cursorbtn"),
     value: 1,
     price: 10,
     quantity: 0,
@@ -9,7 +9,7 @@ export const ITEM_LIST = [
     divPrice: document.querySelector(".priceC"),
   },
   {
-    name: document.querySelector(".mpBtn"),
+    name: document.querySelector(".mpbtn"),
     value: 10,
     price: 100,
     quantity: 0,
@@ -18,7 +18,7 @@ export const ITEM_LIST = [
     divPrice: document.querySelector(".priceMP"),
   },
   {
-    name: document.querySelector(".jcvdBtn"),
+    name: document.querySelector(".jcvdbtn"),
     value: 25,
     price: 250,
     quantity: 0,
@@ -27,7 +27,7 @@ export const ITEM_LIST = [
     divPrice: document.querySelector(".priceJC"),
   },
   {
-    name: document.querySelector(".bakeryBtn"),
+    name: document.querySelector(".bakerybtn"),
     value: 75,
     price: 750,
     quantity: 0,
@@ -36,7 +36,7 @@ export const ITEM_LIST = [
     divPrice: document.querySelector(".priceB"),
   },
   {
-    name: document.querySelector(".atomBtn"),
+    name: document.querySelector(".atombtn"),
     value: 150,
     price: 1500,
     quantity: 0,
@@ -45,12 +45,50 @@ export const ITEM_LIST = [
     divPrice: document.querySelector(".priceA"),
   },
   {
-    name: document.querySelector(".gpBtn"),
+    name: document.querySelector(".gpbtn"),
     value: 400,
     price: 4000,
     quantity: 0,
     divQuantity: document.querySelector(".num-grand-place"),
     divRentability: document.querySelector(".num-grand-place-waffles"),
     divPrice: document.querySelector(".priceG"),
+  },
+];
+export const ITEM_LIST_SELL = [
+  {
+    name: document.querySelector(".cursorbtnSELL"),
+    divQuantity: document.querySelector(".num-cursorSELL"),
+    divRentability: document.querySelector(".num-cursor-wafflesSELL"),
+    divPrice: document.querySelector(".priceCSELL"),
+  },
+  {
+    name: document.querySelector(".mpbtnSELL"),
+    divQuantity: document.querySelector(".num-manneken-pisSELL"),
+    divRentability: document.querySelector(".num-manneken-pis-wafflesSELL"),
+    divPrice: document.querySelector(".priceMPSELL"),
+  },
+  {
+    name: document.querySelector(".jcvdbtnSELL"),
+    divQuantity: document.querySelector(".num-jean-claudeSELL"),
+    divRentability: document.querySelector(".num-jean-wafflesSELL"),
+    divPrice: document.querySelector(".priceJCSELL"),
+  },
+  {
+    name: document.querySelector(".bakerybtnSELL"),
+    divQuantity: document.querySelector(".num-bakerySELL"),
+    divRentability: document.querySelector(".num-bakery-wafflesSELL"),
+    divPrice: document.querySelector(".priceBSELL"),
+  },
+  {
+    name: document.querySelector(".atombtnSELL"),
+    divQuantity: document.querySelector(".num-atomiumSELL"),
+    divRentability: document.querySelector(".num-atomium-wafflesSELL"),
+    divPrice: document.querySelector(".priceASELL"),
+  },
+  {
+    name: document.querySelector(".gpbtnSELL"),
+    divQuantity: document.querySelector(".num-grand-placeSELL"),
+    divRentability: document.querySelector(".num-grand-place-wafflesSELL"),
+    divPrice: document.querySelector(".priceGSELL"),
   },
 ];
