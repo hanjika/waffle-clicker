@@ -63,26 +63,26 @@ function sellItem(e) {
 // -------------------------------------------------
 
 function addItemtoCity(item) {
-    if (item === 'cursor') {
-        const newImg = document.createElement('img');
-        newImg.src = cursor;
-        document.querySelector('.purchased-cursors').appendChild(newImg);
-    } else {
-        const city = document.querySelector('.purchased');
-        const cityDiv = city.querySelector('.' + item);
+  if (item === 'cursor') {
+      const newImg = document.createElement('img');
+      newImg.src = cursor;
+      document.querySelector('.purchased-cursors').appendChild(newImg);
+  } else {
+      const city = document.querySelector('.purchased');
+      const cityDiv = city.querySelector('.' + item);
 
-        const newImg = document.createElement('img');
-        if (item === 'jean-claude') {
-            newImg.src = jean;
-        } else if (item === 'manneken-pis') {
-            newImg.src = manneken;
-        } else {
-            newImg.src = item;
-        }
-        cityDiv.appendChild(newImg);
-    }
-    cityDiv.appendChild(newImg);
+      const newImg = document.createElement('img');
+      if (item === 'jean-claude') {
+          newImg.src = jean;
+      } else if (item === 'manneken-pis') {
+          newImg.src = manneken;
+      } else {
+          newImg.src = item;
+      }
+      cityDiv.appendChild(newImg);
   }
+  cityDiv.appendChild(newImg);
+}
 
 // -------------------------------------------------
 //   Change values in description of purchased item
