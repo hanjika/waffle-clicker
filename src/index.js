@@ -1,4 +1,4 @@
-import { ITEM_LIST } from "./collection";
+import { ITEM_LIST, ITEM_LIST_SELL } from "./collection";
 import {
   waffleAnimation,
   autoClickerBUY,
@@ -8,12 +8,10 @@ import {
 import { canAffordStoreItems, canSell } from "./store-buttons";
 
 // -------------------------------------------------
-//      ADD EVENT LISTENERS TO BUY/SELL BUTTONS
+//                BUY/SELL BUTTONS
 // -------------------------------------------------
-
 const buyBtn = document.querySelector(".buy-button");
 const sellBtn = document.querySelector(".sell-button");
-
 const buySection = document.querySelector(".buy-section");
 const sellSection = document.querySelector(".sell-section");
 
@@ -36,6 +34,7 @@ sellBtn.addEventListener("click", () => {
     buyBtn.classList.remove("active");
   }
 });
+
 // -------------------------------------------------
 //                   WAFFLE BTN
 // -------------------------------------------------
@@ -57,7 +56,7 @@ waffleBTN.addEventListener("click", () => {
 });
 
 // -----------------------------------------------------------
-//               AUTO-CLICK BTNS
+//                 BONUS/AUTO-CLICK BTNS
 // -----------------------------------------------------------
 // BUY SECTION
 for (let i = 0; i < ITEM_LIST.length; i++) {
@@ -65,6 +64,6 @@ for (let i = 0; i < ITEM_LIST.length; i++) {
 }
 
 // SELL SECTION
-// for (let i = 0; i < ITEM_LIST.length; i++) {
-//   .addEventListener("click", () => autoClickerSELL(i));
-// }
+for (let i = 0; i < ITEM_LIST.length; i++) {
+  ITEM_LIST_SELL[i].name.addEventListener("click", () => autoClickerSELL(i));
+}
