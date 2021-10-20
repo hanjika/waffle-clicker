@@ -3,6 +3,8 @@ import cursor from "./images/cursor.png";
 import manneken from "./images/manneken-pis.png";
 import jean from "./images/jean-claude.gif";
 
+import { ITEM_LIST_SELL } from "./collection";
+
 var counter = document.querySelector(".counter");
 // var counterInterval = setInterval(increaseCounterfromPurchases, 1000);
 const storeButtons = document.querySelectorAll(".store-button");
@@ -138,17 +140,24 @@ export function canAffordStoreItems() {
 }
 
 export function canSell() {
-  const storeSellButtons = document.querySelectorAll(".sell-store-button");
-  for (const sellStoreBtn of storeSellButtons) {
-    const amount = sellStoreBtn.document.querySelector(".amount");
-    if (amount !== "") {
-      sellStoreBtn.classList.add("available");
-      sellStoreBtn.addEventListener("click", sellItem);
+  // const storeSellButtons = document.querySelectorAll(".sell-store-button");
+  // for (const sellStoreBtn of storeSellButtons) {
+  //   const amount = sellStoreBtn.document.querySelector(".amount");
+  //   if (amount !== "") {
+  //     sellStoreBtn.classList.add("available");
+  //     sellStoreBtn.addEventListener("click", sellItem);
+  //   }
+  // }
+  for (let item of ITEM_LIST_SELL) {
+    if (item.quantity > 0) {
+      item.name.classList.add("available");
+    } else {
+      item.name.classList.remove("available");
     }
   }
 }
 
-function itemAvailableToBuy(affordableItems) {
+export function itemAvailableToBuy(affordableItems) {
   const storeButtons = document.querySelectorAll(".store-button");
   refreshAvailability(storeButtons);
   for (const storeBtn of storeButtons) {
@@ -161,11 +170,9 @@ function itemAvailableToBuy(affordableItems) {
   }
 }
 
-function refreshAvailability(storeButtons) {
+export function refreshAvailability(storeButtons) {
   for (const storeBtn of storeButtons) {
-    if (storeBtn.classList.contains("available")) {
-      storeBtn.classList.remove("available");
-      storeBtn.removeEventListener("click", purchaseItem);
-    }
+    storeBtn.classList.remove("available");
+    storeBtn.removeEventListener("click", purchaseItem);
   }
 }

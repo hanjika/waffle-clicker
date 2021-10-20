@@ -48,11 +48,8 @@ waffleBTN.addEventListener("click", () => {
   waffleAnimation();
 
   // Updates items that are affordable or owned
-  if (buyBtn.classList.contains("active")) {
-    canAffordStoreItems();
-  } else {
-    canSell();
-  }
+  canAffordStoreItems();
+  canSell();
 });
 
 // -----------------------------------------------------------
