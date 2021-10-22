@@ -6,7 +6,9 @@ import {
   waffleAnimation,
   autoClickerBUY,
   autoClickerSELL,
-  udpateScore
+  udpateScore,
+  updateTitleScore,
+  wafflesPerSecond
 } from "./functions";
 import { 
   canAffordStoreItems, 
@@ -33,7 +35,7 @@ function wafflesPerSecond() {
 
   for (const onePerSec of allPerSec) {
     const number = parseInt(onePerSec.innerText);
-    num += number/2;
+    num += number/2; /* Divide by 2 due to two sets of buttons (buy/sell) with num-waffles class */
   }
   document.querySelector('.perSecond').innerText = num;
 }

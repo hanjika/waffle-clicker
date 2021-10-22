@@ -189,7 +189,6 @@ button {
 }
 
 .waffle-section-text-container {
-    /* background-color: var(--darker-sky-blue); */
     background-color: black;
     border-radius: 25px;
     max-width: 200px;

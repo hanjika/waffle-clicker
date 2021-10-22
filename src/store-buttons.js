@@ -41,8 +41,6 @@ function purchaseItem(e) {
   addItemtoCity(item);
   canAffordStoreItems();
   canSell();
-  // subtractPriceFromCounter(e.target);
-  // editItemDescription(e.target);
 }
 
 function subtractPriceFromCounter(item) {
@@ -56,7 +54,6 @@ function subtractPriceFromCounter(item) {
 // -------------------------------------------------
 
 function sellItem(e) {
-  console.log("yayaya");
   var item = e.target.id;
   removeItemFromCity(item);
   canAffordStoreItems();
