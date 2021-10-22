@@ -20,7 +20,7 @@ import {
 const counter = document.querySelector('.counter');
 document.title = counter.innerText + " Waffles | Belgian Waffle Clicker"
 
-setInterval(updateTitleScore, 3000);
+setInterval(updateTitleScore, 1000);
 setInterval(wafflesPerSecond, 1000);
 
 function updateTitleScore() {
