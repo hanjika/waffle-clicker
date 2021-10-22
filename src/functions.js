@@ -45,6 +45,21 @@ export function udpateScore() {
   counter.innerHTML = score;
 }
 
+export function updateTitleScore() {
+  document.title = counter.innerText + " Waffles | Belgian Waffle Clicker"
+}
+
+export function wafflesPerSecond() {
+  const allPerSec = document.querySelectorAll('.num-waffles');
+  let num = 0;
+
+  for (const onePerSec of allPerSec) {
+    const number = parseInt(onePerSec.innerText);
+    num += number/2; /* Divide by 2 due to two sets of buttons (buy/sell) with num-waffles class */
+  }
+  document.querySelector('.perSecond').innerText = num;
+}
+
 export function waffleAnimation() {
   const littleWaffle = document.createElement("div");
   littleWaffle.classList.add("animation");
