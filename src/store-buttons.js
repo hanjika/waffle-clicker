@@ -56,7 +56,6 @@ function subtractPriceFromCounter(item) {
 // -------------------------------------------------
 
 function sellItem(e) {
-  console.log("yayaya");
   var item = e.target.id;
   removeItemFromCity(item);
   canAffordStoreItems();
